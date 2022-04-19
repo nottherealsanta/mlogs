@@ -1,7 +1,9 @@
 ---
 date-created: 2022-04-18
-title: Conda
 ---
+
+Conda
+=====
 
 # Why conda ?
 
@@ -26,11 +28,12 @@ bash ./Anaconda3-2021.11-Linux-x86_64.sh
 
 3. Follow the instruction prompt 
 
-> Note: Choose the installtion location depending on storage space. Conda enviroment tend to take up to few GBs per enviroment 
-
+```{tip} 
+Choose the installtion location depending on storage space. Conda enviroment tend to take up to few GBs per enviroment 
+```
 > Note:  when installer prompts “Do you wish the installer to initialize Anaconda3 by running conda init?” **Choose “yes”**
 
-4. Restart the terminal or enter the following 
+1. Restart the terminal or enter the following 
 ```bash
 source ~/.bashrc
 ```
