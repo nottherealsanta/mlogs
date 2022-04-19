@@ -20,25 +20,20 @@ Conda
 ```bash
 wget https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh
 ```
-
 2. Install 
 ```bash
 bash ./Anaconda3-2021.11-Linux-x86_64.sh
 ```
-
 3. Follow the instruction prompt 
-
 ```{tip} 
 Choose the installtion location depending on storage space. Conda enviroment tend to take up to few GBs per enviroment 
 ```
-> Note:  when installer prompts “Do you wish the installer to initialize Anaconda3 by running conda init?” **Choose “yes”**
-
+when installer prompts “Do you wish the installer to initialize Anaconda3 by running conda init?” **Choose “yes”**. This will start conda with every terminal session.
 1. Restart the terminal or enter the following 
 ```bash
 source ~/.bashrc
 ```
-
-> you should see "(base)" in your bash prompt
+you should see "(base)" in your bash prompt
 
 ---
 # Usage 
