@@ -1,9 +1,10 @@
 ---
 date-created: 2022-04-18
 ---
-
 Conda
 =====
+
+[github](https://github.com/conda/conda)
 
 # Why conda ?
 
@@ -11,62 +12,55 @@ Conda
     Every project has it's own dependencies. One project might use Tensorflow and another might use XGBoost. There is no reason why these two project should be in the same enviroment. Conda lets you create different enviroments for every project ( or every type of project )
 
 2. Share your environments
-    If you are working with a team, it is essentials that you develop on the same enviroment so as to avoid dependency issues. You would not only be tracking your python package dependencies but also python version itself. 
+    If you are working with a team, it is essentials that you develop on the same enviroment so as to avoid dependency issues. You would not only be tracking your python package dependencies but also python version itself. This sharing also applied to building projects in production, which can use the same enviroment. 
 
 ---
 # Installation 
 
-1.  Download Installer ( for Linux )
-    - ```bash 
-        wget https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh
-        ```
+1.  Download Installer (for Linux)
+    ```bash 
+    wget https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh
+    ```
 2. Install 
-   - ```bash
-        bash ./Anaconda3-2021.11-Linux-x86_64.sh
-        ```
-
-#### Follow the instruction prompt 
-```{tip} 
-Choose the installtion location depending on storage space. Conda enviroment tend to take up to few GBs per enviroment 
-```
-```{caution}
-when installer prompts “Do you wish the installer to initialize Anaconda3 by running conda init?” **Choose “yes”**. This will start conda with every terminal session.
-```
-
-#### Restart the terminal or enter the following 
-```bash
-source ~/.bashrc
-```
-you should see "(base)" in your bash prompt
+    ```bash
+    bash ./Anaconda3-2021.11-Linux-x86_64.sh
+    ```
+3. Follow the instruction prompt.  
+    Choose the installtion location depending on storage space. Conda enviroment tend to take up to few GBs per enviroment 
+    ```{tip}
+    When installer prompts “Do you wish the installer to initialize Anaconda3 by running conda init?” **Choose “yes”**. This will start conda with every terminal session.
+    ```
+4. Restart the terminal or enter the following 
+    ```bash
+    source ~/.bashrc
+    ```
+    you should see "(base)" in your bash prompt
 
 ---
 # Usage 
 
-## Activate and Deactivate   
-
+### Activate base 
 ```bash
 conda activate base 
 ```
+Activates the base environment. You should see `(base)` in bash prompt.
 
 ```bash
 which python
 ``` 
 this should point to `base` environment's python. For example :  `~/anaconda3/bin/python` 
 
-</br>
+### Deactivate base 
 
 ```bash
 conda deactivate && which python
 ```
-> this deactivates conda's base env and now 'python' should point to : `/usr/bin/python`
+this deactivates conda's base env and now 'python' should point to : `/usr/bin/python`
 
-
-
-
-</br>
-
+```{note}
 This applies to `pip` as well. So packages installed through pip inside the base environment will not be avaiable in the system's python ( after deactivating ). 
-> try 'which pip' inside and outside the base env 
+try 'which pip' inside and outside the base env 
+```
 
 ---
 ## Custom Environment
@@ -75,7 +69,10 @@ This applies to `pip` as well. So packages installed through pip inside the base
 ```bash
 conda create -n custom_env python=3.8.2
 ```
-> Note: `custom_env` is the name of the environment and `-n` is short hand for `--name` 
+```{note}
+`custom_env` is the name of the environment.
+`-n` is short hand for `--name` 
+```
 
 ### Activate
 ```bash
@@ -121,8 +118,9 @@ conda install pandas
 
 will install pandas similar to `pip install pandas`
 
-> not all packages are avaiable in conda but you can use pip inside the environment and it will also be tracked as dependencies. 
-
+```{note}
+not all packages are avaiable in conda but you can use pip inside the environment and it will also be tracked as dependencies. 
+```
 # Cheatsheet
 
-[link](https://docs.conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a3484886fa28163c/conda-cheatsheet.pdf) to conda's cheet sheet ( from conda's documentation )
+[link](https://docs.conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a3484886fa28163c/conda-cheatsheet.pdf) to conda's cheet sheet ( from conda's doc )
