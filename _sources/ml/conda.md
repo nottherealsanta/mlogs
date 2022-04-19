@@ -16,20 +16,24 @@ Conda
 ---
 # Installation 
 
-1. Download Installer ( for Linux )
-```bash
-wget https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh
-```
+1.  Download Installer ( for Linux )
+    - ```bash 
+        wget https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh
+        ```
 2. Install 
-```bash
-bash ./Anaconda3-2021.11-Linux-x86_64.sh
-```
-3. Follow the instruction prompt 
+   - ```bash
+        bash ./Anaconda3-2021.11-Linux-x86_64.sh
+        ```
+
+#### Follow the instruction prompt 
 ```{tip} 
 Choose the installtion location depending on storage space. Conda enviroment tend to take up to few GBs per enviroment 
 ```
+```{caution}
 when installer prompts “Do you wish the installer to initialize Anaconda3 by running conda init?” **Choose “yes”**. This will start conda with every terminal session.
-1. Restart the terminal or enter the following 
+```
+
+#### Restart the terminal or enter the following 
 ```bash
 source ~/.bashrc
 ```
@@ -40,12 +44,14 @@ you should see "(base)" in your bash prompt
 
 ## Activate and Deactivate   
 
-</br>
+```bash
+conda activate base 
+```
 
 ```bash
 which python
 ``` 
-> this should point to `base` environment's python. For example :  `~/anaconda3/bin/python` 
+this should point to `base` environment's python. For example :  `~/anaconda3/bin/python` 
 
 </br>
 
@@ -54,13 +60,8 @@ conda deactivate && which python
 ```
 > this deactivates conda's base env and now 'python' should point to : `/usr/bin/python`
 
-</br>
 
-```bash
-conda activate base 
-```
 
-> to activate the base env 
 
 </br>
 
@@ -70,13 +71,13 @@ This applies to `pip` as well. So packages installed through pip inside the base
 ---
 ## Custom Environment
 
-### Create environment with a specific python version
+### Create with a specific python version
 ```bash
 conda create -n custom_env python=3.8.2
 ```
 > Note: `custom_env` is the name of the environment and `-n` is short hand for `--name` 
 
-### Activate environment
+### Activate
 ```bash
 conda activate custom_env
 ```
@@ -84,7 +85,7 @@ conda activate custom_env
 
 `conda deactivate` will take you to base environment.
 
-### Save environment to file
+### Save to file
 
 ```bash
 conda env export > custom_env_file.yml
@@ -92,14 +93,14 @@ conda env export > custom_env_file.yml
 
 This file can be inside your project and be tracked via git. 
 
-### Remove environment 
+### Remove 
 
 ```bash 
 conda remove -n custom_env --all 
 ``` 
 make sure to deactivate the environment before removing the environment
 
-### Load environment from file 
+### Load from file 
 
 ```bash 
 conda env create -f custom_env_file.yml 
