@@ -50,20 +50,17 @@ which python
 ``` 
 this should point to `base` environment's python. For example :  `~/anaconda3/bin/python` 
 
-</br>
+### Deactivate base 
 
 ```bash
 conda deactivate && which python
 ```
-> this deactivates conda's base env and now 'python' should point to : `/usr/bin/python`
+this deactivates conda's base env and now 'python' should point to : `/usr/bin/python`
 
-
-
-
-</br>
-
+```{note}
 This applies to `pip` as well. So packages installed through pip inside the base environment will not be avaiable in the system's python ( after deactivating ). 
-> try 'which pip' inside and outside the base env 
+try 'which pip' inside and outside the base env 
+```
 
 ---
 ## Custom Environment
@@ -121,8 +118,9 @@ conda install pandas
 
 will install pandas similar to `pip install pandas`
 
-> not all packages are avaiable in conda but you can use pip inside the environment and it will also be tracked as dependencies. 
-
+```{note}
+not all packages are avaiable in conda but you can use pip inside the environment and it will also be tracked as dependencies. 
+```
 # Cheatsheet
 
-[link](https://docs.conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a3484886fa28163c/conda-cheatsheet.pdf) to conda's cheet sheet ( from conda's documentation )
+[link](https://docs.conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a3484886fa28163c/conda-cheatsheet.pdf) to conda's cheet sheet ( from conda's doc )
