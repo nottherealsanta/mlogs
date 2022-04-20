@@ -34,7 +34,7 @@ Conda
     ```bash
     source ~/.bashrc
     ```
-    you should see "(base)" in your bash prompt
+    you should see `(base)` in your bash prompt
 
 ---
 # Usage 
@@ -70,7 +70,7 @@ try 'which pip' inside and outside the base env
 conda create -n custom_env python=3.8.2
 ```
 ```{note}
-`custom_env` is the name of the environment.
+`custom_env` is the name of the environment.  
 `-n` is short hand for `--name` 
 ```
 
@@ -78,7 +78,7 @@ conda create -n custom_env python=3.8.2
 ```bash
 conda activate custom_env
 ```
-> try `which python` and `python --version` after this step 
+try `which python` and `python --version` after this step. It should point to this environment's python.  
 
 `conda deactivate` will take you to base environment.
 
@@ -105,7 +105,9 @@ conda env create -f custom_env_file.yml
 
 it will create `custom_env`. The name of the environment is also stored in the file. 
 
-> look at the file after installing some package with pip and conda
+```{tip}
+look at the file after installing some package with pip and conda
+```
 
 
 ## Installing Package 
@@ -123,4 +125,4 @@ not all packages are avaiable in conda but you can use pip inside the environmen
 ```
 # Cheatsheet
 
-[link](https://docs.conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a3484886fa28163c/conda-cheatsheet.pdf) to conda's cheet sheet ( from conda's doc )
+[conda's cheet sheet](https://docs.conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a3484886fa28163c/conda-cheatsheet.pdf) (from conda's doc)
