@@ -39,6 +39,10 @@ Conda
 ---
 # Usage 
 
+## Base Environment 
+
+When conda is installed you get a default environment called `base` 
+
 ### Activate base 
 ```bash
 conda activate base 
@@ -74,6 +78,11 @@ conda create -n custom_env python=3.8.2
 `-n` is short hand for `--name` 
 ```
 
+### List
+```bash
+conda info --envs
+```
+
 ### Activate
 ```bash
 conda activate custom_env
@@ -88,7 +97,7 @@ try `which python` and `python --version` after this step. It should point to th
 conda env export > custom_env_file.yml
 ``` 
 
-This file can be inside your project and be tracked via git. 
+This file can be inside your project and can be version controlled via git. 
 
 ### Remove 
 
@@ -106,7 +115,7 @@ conda env create -f custom_env_file.yml
 it will create `custom_env`. The name of the environment is also stored in the file. 
 
 ```{tip}
-look at the file after installing some package with pip and conda
+Look at the file after installing some package with pip and conda. You need to export to see the changes.
 ```
 
 
@@ -121,7 +130,7 @@ conda install pandas
 will install pandas similar to `pip install pandas`
 
 ```{note}
-not all packages are avaiable in conda but you can use pip inside the environment and it will also be tracked as dependencies. 
+Not all packages are avaiable in conda but you can use pip inside the environment and it will  be tracked conda dependencies. 
 ```
 # Cheatsheet
 

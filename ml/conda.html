@@ -28,6 +28,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
@@ -190,14 +191,21 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#activate-base">
-     Activate base
+    <a class="reference internal nav-link" href="#base-environment">
+     Base Environment
     </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deactivate-base">
-     Deactivate base
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#activate-base">
+       Activate base
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#deactivate-base">
+       Deactivate base
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#custom-environment">
@@ -207,6 +215,11 @@ const thebe_selector_output = ".output, .cell_output"
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#create-with-a-specific-python-version">
        Create with a specific python version
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#list">
+       List
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
@@ -284,14 +297,21 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#activate-base">
-     Activate base
+    <a class="reference internal nav-link" href="#base-environment">
+     Base Environment
     </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#deactivate-base">
-     Deactivate base
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#activate-base">
+       Activate base
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#deactivate-base">
+       Deactivate base
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#custom-environment">
@@ -301,6 +321,11 @@ const thebe_selector_output = ".output, .cell_output"
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#create-with-a-specific-python-version">
        Create with a specific python version
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#list">
+       List
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
@@ -391,8 +416,11 @@ Choose the installtion location depending on storage space. Conda enviroment ten
 <hr class="docutils" />
 <div class="tex2jax_ignore mathjax_ignore section" id="usage">
 <h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="base-environment">
+<h2>Base Environment<a class="headerlink" href="#base-environment" title="Permalink to this headline">¶</a></h2>
+<p>When conda is installed you get a default environment called <code class="docutils literal notranslate"><span class="pre">base</span></code></p>
 <div class="section" id="activate-base">
-<h2>Activate base<a class="headerlink" href="#activate-base" title="Permalink to this headline">¶</a></h2>
+<h3>Activate base<a class="headerlink" href="#activate-base" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate base 
 </pre></div>
 </div>
@@ -403,7 +431,7 @@ Choose the installtion location depending on storage space. Conda enviroment ten
 <p>this should point to <code class="docutils literal notranslate"><span class="pre">base</span></code> environment’s python. For example :  <code class="docutils literal notranslate"><span class="pre">~/anaconda3/bin/python</span></code></p>
 </div>
 <div class="section" id="deactivate-base">
-<h2>Deactivate base<a class="headerlink" href="#deactivate-base" title="Permalink to this headline">¶</a></h2>
+<h3>Deactivate base<a class="headerlink" href="#deactivate-base" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda deactivate <span class="o">&amp;&amp;</span> which python
 </pre></div>
 </div>
@@ -412,6 +440,7 @@ Choose the installtion location depending on storage space. Conda enviroment ten
 <p class="admonition-title">Note</p>
 <p>This applies to <code class="docutils literal notranslate"><span class="pre">pip</span></code> as well. So packages installed through pip inside the base environment will not be avaiable in the system’s python ( after deactivating ).
 try ‘which pip’ inside and outside the base env</p>
+</div>
 </div>
 </div>
 <hr class="docutils" />
@@ -428,6 +457,12 @@ try ‘which pip’ inside and outside the base env</p>
 <code class="docutils literal notranslate"><span class="pre">-n</span></code> is short hand for <code class="docutils literal notranslate"><span class="pre">--name</span></code></p>
 </div>
 </div>
+<div class="section" id="list">
+<h3>List<a class="headerlink" href="#list" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda info --envs
+</pre></div>
+</div>
+</div>
 <div class="section" id="activate">
 <h3>Activate<a class="headerlink" href="#activate" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate custom_env
@@ -441,7 +476,7 @@ try ‘which pip’ inside and outside the base env</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda env <span class="nb">export</span> &gt; custom_env_file.yml
 </pre></div>
 </div>
-<p>This file can be inside your project and be tracked via git.</p>
+<p>This file can be inside your project and can be version controlled via git.</p>
 </div>
 <div class="section" id="remove">
 <h3>Remove<a class="headerlink" href="#remove" title="Permalink to this headline">¶</a></h3>
@@ -458,7 +493,7 @@ try ‘which pip’ inside and outside the base env</p>
 <p>it will create <code class="docutils literal notranslate"><span class="pre">custom_env</span></code>. The name of the environment is also stored in the file.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>look at the file after installing some package with pip and conda</p>
+<p>Look at the file after installing some package with pip and conda. You need to export to see the changes.</p>
 </div>
 </div>
 </div>
@@ -471,7 +506,7 @@ try ‘which pip’ inside and outside the base env</p>
 <p>will install pandas similar to <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pandas</span></code></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>not all packages are avaiable in conda but you can use pip inside the environment and it will also be tracked as dependencies.</p>
+<p>Not all packages are avaiable in conda but you can use pip inside the environment and it will  be tracked conda dependencies.</p>
 </div>
 </div>
 </div>
