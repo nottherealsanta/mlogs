@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap');
+
+:root {
+    --bg-color: #fff;
+    --text-color: #000;
+}
+
+body,
+#site-navigation {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    color: var(--text-color);
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: 'Fira Code', monospace;
+}
+
+pre {
+    border: 0px;
+    border-radius: 0px;
+    background-color: #efefef;
+}
