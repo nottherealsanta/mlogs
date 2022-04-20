@@ -150,22 +150,6 @@ const thebe_selector_output = ".output, .cell_output"
 
             <!-- Source interaction buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/notTheRealSanta/logs"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/notTheRealSanta/logs/issues/new?title=Issue%20on%20page%20%2Fml/conda.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -400,7 +384,7 @@ Choose the installtion location depending on storage space. Conda enviroment ten
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/.bashrc
 </pre></div>
 </div>
-<p>you should see “(base)” in your bash prompt</p>
+<p>you should see <code class="docutils literal notranslate"><span class="pre">(base)</span></code> in your bash prompt</p>
 </li>
 </ol>
 </div>
@@ -440,7 +424,7 @@ try ‘which pip’ inside and outside the base env</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><code class="docutils literal notranslate"><span class="pre">custom_env</span></code> is the name of the environment.
+<p><code class="docutils literal notranslate"><span class="pre">custom_env</span></code> is the name of the environment.<br />
 <code class="docutils literal notranslate"><span class="pre">-n</span></code> is short hand for <code class="docutils literal notranslate"><span class="pre">--name</span></code></p>
 </div>
 </div>
@@ -449,9 +433,7 @@ try ‘which pip’ inside and outside the base env</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda activate custom_env
 </pre></div>
 </div>
-<blockquote>
-<div><p>try <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">python</span></code> and <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">--version</span></code> after this step</p>
-</div></blockquote>
+<p>try <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">python</span></code> and <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">--version</span></code> after this step. It should point to this environment’s python.</p>
 <p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">deactivate</span></code> will take you to base environment.</p>
 </div>
 <div class="section" id="save-to-file">
@@ -474,9 +456,10 @@ try ‘which pip’ inside and outside the base env</p>
 </pre></div>
 </div>
 <p>it will create <code class="docutils literal notranslate"><span class="pre">custom_env</span></code>. The name of the environment is also stored in the file.</p>
-<blockquote>
-<div><p>look at the file after installing some package with pip and conda</p>
-</div></blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>look at the file after installing some package with pip and conda</p>
+</div>
 </div>
 </div>
 <div class="section" id="installing-package">
@@ -494,7 +477,7 @@ try ‘which pip’ inside and outside the base env</p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="cheatsheet">
 <h1>Cheatsheet<a class="headerlink" href="#cheatsheet" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a3484886fa28163c/conda-cheatsheet.pdf">link</a> to conda’s cheet sheet ( from conda’s doc )</p>
+<p><a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a3484886fa28163c/conda-cheatsheet.pdf">conda’s cheet sheet</a> (from conda’s doc)</p>
 </div>
 
     <script type="text/x-thebe-config">
