@@ -140,9 +140,9 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/ml/conda.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/guides/conda.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -159,6 +159,23 @@ const thebe_selector_output = ".output, .cell_output"
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/notTheRealSanta/logs/main?urlpath=tree/docs/guides/conda.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
 
         </div>
 
@@ -506,10 +523,11 @@ try ‘which pip’ inside and outside the base env</p>
 <p>will install pandas similar to <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pandas</span></code></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Not all packages are avaiable in conda but you can use pip inside the environment and it will  be tracked conda dependencies.</p>
+<p>Not all packages are avaiable in conda but you can use pip inside the environment and it will  be tracked conda dependencies. Most pip package are also avaiable through <code class="docutils literal notranslate"><span class="pre">conda-forge</span></code> an open-source channel for conda.conda install -c conda-forge optuna</p>
 </div>
 </div>
 </div>
+<hr class="docutils" />
 <div class="tex2jax_ignore mathjax_ignore section" id="cheatsheet">
 <h1>Cheatsheet<a class="headerlink" href="#cheatsheet" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/_downloads/843d9e0198f2a193a3484886fa28163c/conda-cheatsheet.pdf">conda’s cheet sheet</a> (from conda’s doc)</p>
@@ -528,7 +546,7 @@ try ‘which pip’ inside and outside the base env</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./ml"
+            path: "./guides"
         },
         predefinedOutput: true
     }
