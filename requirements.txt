@@ -3,3 +3,5 @@ matplotlib
 numpy
 ghp-import
 optuna
+pandas
+scikit-learn
