@@ -409,7 +409,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="sequential-model-based-optimisation-smbo">
 <h1>Sequential Model Based Optimisation (<em>SMBO</em>)<a class="headerlink" href="#sequential-model-based-optimisation-smbo" title="Permalink to this headline">¶</a></h1>
-<p>Sequentially selecting different hyperparameter sets where next set is selected by Bayesian reasoning (dependent on the previous runs). gid</p>
+<p>Sequentially selecting different hyperparameter sets where next set is selected by Bayesian reasoning (dependent on the previous runs).</p>
 <p>As a stark difference to grid-search where we already have a set of hyperparameters to search, instead we look at the previously selected hyperparameters and it’s results to intelligently select the next set of hyperparameters to search.</p>
 </div>
 <div class="tex2jax_ignore mathjax_ignore section" id="installation">
@@ -442,19 +442,6 @@ conda install -c conda-forge optuna
 <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">,</span> <span class="n">roc_auc_score</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># imports</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_classification</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
 </pre></div>
 </div>
 </div>
@@ -551,7 +538,10 @@ Test  F1 Score : 0.742857142857143
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>({&#39;C&#39;: 0.14326745204868416, &#39;penalty&#39;: &#39;l1&#39;}, 0.8666666666666666)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>({&#39;C&#39;: 0.15105647665864758,
+  &#39;penalty&#39;: &#39;elasticnet&#39;,
+  &#39;l1_ratio&#39;: 0.3084578560107238},
+ 0.8125)
 </pre></div>
 </div>
 </div>
@@ -595,63 +585,63 @@ Test  F1 Score : 0.742857142857143
   </thead>
   <tbody>
     <tr>
+      <th>14</th>
+      <td>14</td>
+      <td>0.812500</td>
+      <td>2022-04-25 05:49:13.171149</td>
+      <td>2022-04-25 05:49:13.189393</td>
+      <td>0 days 00:00:00.018244</td>
+      <td>0.151056</td>
+      <td>0.308458</td>
+      <td>elasticnet</td>
+      <td>COMPLETE</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>17</td>
+      <td>0.787879</td>
+      <td>2022-04-25 05:49:13.231250</td>
+      <td>2022-04-25 05:49:13.251208</td>
+      <td>0 days 00:00:00.019958</td>
+      <td>0.292909</td>
+      <td>0.524919</td>
+      <td>elasticnet</td>
+      <td>COMPLETE</td>
+    </tr>
+    <tr>
       <th>16</th>
       <td>16</td>
-      <td>0.866667</td>
-      <td>2022-04-25 11:02:03.042372</td>
-      <td>2022-04-25 11:02:03.078160</td>
-      <td>0 days 00:00:00.035788</td>
-      <td>0.110516</td>
-      <td>NaN</td>
-      <td>l1</td>
+      <td>0.787879</td>
+      <td>2022-04-25 05:49:13.210689</td>
+      <td>2022-04-25 05:49:13.228454</td>
+      <td>0 days 00:00:00.017765</td>
+      <td>0.216705</td>
+      <td>0.694158</td>
+      <td>elasticnet</td>
       <td>COMPLETE</td>
     </tr>
     <tr>
       <th>15</th>
       <td>15</td>
-      <td>0.866667</td>
-      <td>2022-04-25 11:02:02.995554</td>
-      <td>2022-04-25 11:02:03.039449</td>
-      <td>0 days 00:00:00.043895</td>
-      <td>0.143267</td>
-      <td>NaN</td>
-      <td>l1</td>
+      <td>0.787879</td>
+      <td>2022-04-25 05:49:13.190348</td>
+      <td>2022-04-25 05:49:13.209725</td>
+      <td>0 days 00:00:00.019377</td>
+      <td>0.283457</td>
+      <td>0.537454</td>
+      <td>elasticnet</td>
       <td>COMPLETE</td>
     </tr>
     <tr>
-      <th>14</th>
-      <td>14</td>
-      <td>0.812500</td>
-      <td>2022-04-25 11:02:02.961086</td>
-      <td>2022-04-25 11:02:02.991294</td>
-      <td>0 days 00:00:00.030208</td>
-      <td>0.273251</td>
-      <td>NaN</td>
-      <td>l1</td>
-      <td>COMPLETE</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>19</td>
-      <td>0.800000</td>
-      <td>2022-04-25 11:02:03.187038</td>
-      <td>2022-04-25 11:02:03.226408</td>
-      <td>0 days 00:00:00.039370</td>
-      <td>0.193753</td>
-      <td>NaN</td>
-      <td>l1</td>
-      <td>COMPLETE</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>11</td>
-      <td>0.764706</td>
-      <td>2022-04-25 11:02:02.823591</td>
-      <td>2022-04-25 11:02:02.866632</td>
-      <td>0 days 00:00:00.043041</td>
-      <td>0.935515</td>
-      <td>NaN</td>
-      <td>l1</td>
+      <th>4</th>
+      <td>4</td>
+      <td>0.750000</td>
+      <td>2022-04-25 05:49:13.048270</td>
+      <td>2022-04-25 05:49:13.056216</td>
+      <td>0 days 00:00:00.007946</td>
+      <td>0.007870</td>
+      <td>0.011014</td>
+      <td>elasticnet</td>
       <td>COMPLETE</td>
     </tr>
   </tbody>
