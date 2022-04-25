@@ -5,5 +5,5 @@ format: jb-book
 root: intro
 chapters:
 - file: guides/conda.ipynb
-# - file: guides/optuna.ipynb
+- file: guides/optuna.ipynb
 
