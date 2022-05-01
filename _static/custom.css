@@ -19,7 +19,7 @@ h5,
 h6,
 p {
     color: var(--text-color);
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
 }
 
 code,
@@ -33,4 +33,10 @@ pre {
     border: 0px;
     border-radius: 0px;
     background-color: #efefef;
+}
+
+div.cell_input{
+    border: 0px;
+    border-radius: 0px;
+    background-color: #ee33ee;
 }
