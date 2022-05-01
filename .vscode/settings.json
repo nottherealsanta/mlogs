@@ -1,8 +1,9 @@
 {
-    "workbench.colorTheme": "Ayu Mirage Bordered",
+    "workbench.colorTheme": "Ayu Dark",
     "spellright.language": [],
     "spellright.documentTypes": [
         "latex",
         "plaintext"
-    ]
+    ],
+    "python.defaultInterpreterPath": "/home/santoshrajanv/anaconda3/envs/logs_env/bin/python"
 }

@@ -1,0 +1,5 @@
+- change dataframe font size in css
+- posts/why scale?
+- posts/notebook_formatter
+- guides/KS
+- app/metrics - how TP and FP along with Threshold affect metrics 
