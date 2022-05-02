@@ -98,16 +98,33 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Topic Guides
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="conda.html">
-   Conda
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="tools.html">
+   Tools
   </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Optuna
-  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="conda.html">
+     Conda
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Optuna
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -543,7 +560,7 @@ Test  F1 Score : 0.742857142857143
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>({&#39;C&#39;: 0.34594308658711964, &#39;penalty&#39;: &#39;l1&#39;}, 0.787878787878788)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>({&#39;C&#39;: 0.12747521518476151, &#39;penalty&#39;: &#39;l1&#39;}, 0.8666666666666666)
 </pre></div>
 </div>
 </div>
@@ -587,63 +604,63 @@ Test  F1 Score : 0.742857142857143
   </thead>
   <tbody>
     <tr>
-      <th>8</th>
-      <td>8</td>
-      <td>0.787879</td>
-      <td>2022-05-02 04:03:39.695347</td>
-      <td>2022-05-02 04:03:39.703060</td>
-      <td>0 days 00:00:00.007713</td>
-      <td>0.345943</td>
+      <th>14</th>
+      <td>14</td>
+      <td>0.866667</td>
+      <td>2022-05-02 04:16:58.812997</td>
+      <td>2022-05-02 04:16:58.824648</td>
+      <td>0 days 00:00:00.011651</td>
+      <td>0.127475</td>
       <td>NaN</td>
       <td>l1</td>
       <td>COMPLETE</td>
     </tr>
     <tr>
-      <th>19</th>
-      <td>19</td>
+      <th>13</th>
+      <td>13</td>
+      <td>0.812500</td>
+      <td>2022-05-02 04:16:58.796942</td>
+      <td>2022-05-02 04:16:58.810334</td>
+      <td>0 days 00:00:00.013392</td>
+      <td>0.094113</td>
+      <td>NaN</td>
+      <td>l1</td>
+      <td>COMPLETE</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7</td>
+      <td>0.812500</td>
+      <td>2022-05-02 04:16:58.721249</td>
+      <td>2022-05-02 04:16:58.729379</td>
+      <td>0 days 00:00:00.008130</td>
+      <td>0.097637</td>
+      <td>NaN</td>
+      <td>l1</td>
+      <td>COMPLETE</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>11</td>
+      <td>0.812500</td>
+      <td>2022-05-02 04:16:58.766787</td>
+      <td>2022-05-02 04:16:58.781911</td>
+      <td>0 days 00:00:00.015124</td>
+      <td>0.100856</td>
+      <td>NaN</td>
+      <td>l1</td>
+      <td>COMPLETE</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
       <td>0.764706</td>
-      <td>2022-05-02 04:03:39.843490</td>
-      <td>2022-05-02 04:03:39.865482</td>
-      <td>0 days 00:00:00.021992</td>
-      <td>1.467748</td>
-      <td>0.657393</td>
-      <td>elasticnet</td>
-      <td>COMPLETE</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>17</td>
-      <td>0.742857</td>
-      <td>2022-05-02 04:03:39.816469</td>
-      <td>2022-05-02 04:03:39.829651</td>
-      <td>0 days 00:00:00.013182</td>
-      <td>0.275677</td>
+      <td>2022-05-02 04:16:58.647219</td>
+      <td>2022-05-02 04:16:58.656339</td>
+      <td>0 days 00:00:00.009120</td>
+      <td>0.524715</td>
       <td>NaN</td>
-      <td>l2</td>
-      <td>COMPLETE</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>14</td>
-      <td>0.742857</td>
-      <td>2022-05-02 04:03:39.774100</td>
-      <td>2022-05-02 04:03:39.785992</td>
-      <td>0 days 00:00:00.011892</td>
-      <td>0.692971</td>
-      <td>NaN</td>
-      <td>l2</td>
-      <td>COMPLETE</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>12</td>
-      <td>0.742857</td>
-      <td>2022-05-02 04:03:39.743502</td>
-      <td>2022-05-02 04:03:39.757094</td>
-      <td>0 days 00:00:00.013592</td>
-      <td>0.239153</td>
-      <td>NaN</td>
-      <td>l2</td>
+      <td>l1</td>
       <td>COMPLETE</td>
     </tr>
   </tbody>
