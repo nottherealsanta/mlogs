@@ -5,5 +5,5 @@
         "latex",
         "plaintext"
     ],
-    "python.defaultInterpreterPath": "/home/santoshrajanv/anaconda3/envs/logs_env/bin/python"
+    "python.defaultInterpreterPath": "/home/santoshrajanv/anaconda3/envs/mlogs/bin/python"
 }
