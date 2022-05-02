@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Content with notebooks &#8212; logs</title>
+    <title>Content with notebooks &#8212; mlogs</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -77,9 +77,14 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">logs</h1>
+      <img src="_static/logo.drawio.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">mlogs</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -96,12 +101,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="guides/conda.html">
+  <a class="reference internal" href="tools/conda.html">
    Conda
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="guides/optuna.html">
+  <a class="reference internal" href="tools/optuna.html">
    Optuna
   </a>
  </li>
@@ -171,7 +176,7 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/notTheRealSanta/logs/main?urlpath=tree/docs/notebooks.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nottherealsanta/mlogs/main?urlpath=tree/docs/notebooks.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -295,7 +300,7 @@ For example, here’s some sample Matplotlib code:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.pyplot._IonContext at 0x7fa0d2b44a60&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.pyplot._IonContext at 0x7f7f49f85b80&gt;
 </pre></div>
 </div>
 </div>
@@ -364,7 +369,7 @@ with your book. For more information about this, see <a class="reference externa
     <footer class="footer">
   <p>
     
-      By Santa<br/>
+      By Santosh Rajan<br/>
     
         &copy; Copyright 2022.<br/>
   </p>

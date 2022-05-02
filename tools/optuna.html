@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Optuna &#8212; logs</title>
+    <title>Optuna &#8212; mlogs</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -76,9 +76,14 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
       
       
-      <h1 class="site-logo" id="site-title">logs</h1>
+      <img src="../_static/logo.drawio.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">mlogs</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -145,7 +150,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/guides/optuna.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/tools/optuna.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -170,7 +175,7 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/notTheRealSanta/logs/main?urlpath=tree/docs/guides/optuna.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nottherealsanta/mlogs/main?urlpath=tree/docs/tools/optuna.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -538,7 +543,7 @@ Test  F1 Score : 0.742857142857143
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>({&#39;C&#39;: 0.1550589281460207, &#39;penalty&#39;: &#39;l1&#39;}, 0.8666666666666666)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>({&#39;C&#39;: 0.34594308658711964, &#39;penalty&#39;: &#39;l1&#39;}, 0.787878787878788)
 </pre></div>
 </div>
 </div>
@@ -582,63 +587,63 @@ Test  F1 Score : 0.742857142857143
   </thead>
   <tbody>
     <tr>
-      <th>13</th>
-      <td>13</td>
-      <td>0.866667</td>
-      <td>2022-05-01 07:55:52.914748</td>
-      <td>2022-05-01 07:55:52.927545</td>
-      <td>0 days 00:00:00.012797</td>
-      <td>0.155059</td>
+      <th>8</th>
+      <td>8</td>
+      <td>0.787879</td>
+      <td>2022-05-02 04:03:39.695347</td>
+      <td>2022-05-02 04:03:39.703060</td>
+      <td>0 days 00:00:00.007713</td>
+      <td>0.345943</td>
       <td>NaN</td>
       <td>l1</td>
+      <td>COMPLETE</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>19</td>
+      <td>0.764706</td>
+      <td>2022-05-02 04:03:39.843490</td>
+      <td>2022-05-02 04:03:39.865482</td>
+      <td>0 days 00:00:00.021992</td>
+      <td>1.467748</td>
+      <td>0.657393</td>
+      <td>elasticnet</td>
+      <td>COMPLETE</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>17</td>
+      <td>0.742857</td>
+      <td>2022-05-02 04:03:39.816469</td>
+      <td>2022-05-02 04:03:39.829651</td>
+      <td>0 days 00:00:00.013182</td>
+      <td>0.275677</td>
+      <td>NaN</td>
+      <td>l2</td>
       <td>COMPLETE</td>
     </tr>
     <tr>
       <th>14</th>
       <td>14</td>
-      <td>0.812500</td>
-      <td>2022-05-01 07:55:52.928946</td>
-      <td>2022-05-01 07:55:52.944567</td>
-      <td>0 days 00:00:00.015621</td>
-      <td>0.097658</td>
+      <td>0.742857</td>
+      <td>2022-05-02 04:03:39.774100</td>
+      <td>2022-05-02 04:03:39.785992</td>
+      <td>0 days 00:00:00.011892</td>
+      <td>0.692971</td>
       <td>NaN</td>
-      <td>l1</td>
-      <td>COMPLETE</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>10</td>
-      <td>0.787879</td>
-      <td>2022-05-01 07:55:52.864200</td>
-      <td>2022-05-01 07:55:52.882551</td>
-      <td>0 days 00:00:00.018351</td>
-      <td>0.363308</td>
-      <td>NaN</td>
-      <td>l1</td>
-      <td>COMPLETE</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>11</td>
-      <td>0.787879</td>
-      <td>2022-05-01 07:55:52.884041</td>
-      <td>2022-05-01 07:55:52.897431</td>
-      <td>0 days 00:00:00.013390</td>
-      <td>0.361055</td>
-      <td>NaN</td>
-      <td>l1</td>
+      <td>l2</td>
       <td>COMPLETE</td>
     </tr>
     <tr>
       <th>12</th>
       <td>12</td>
-      <td>0.774194</td>
-      <td>2022-05-01 07:55:52.899250</td>
-      <td>2022-05-01 07:55:52.912999</td>
-      <td>0 days 00:00:00.013749</td>
-      <td>0.235752</td>
+      <td>0.742857</td>
+      <td>2022-05-02 04:03:39.743502</td>
+      <td>2022-05-02 04:03:39.757094</td>
+      <td>0 days 00:00:00.013592</td>
+      <td>0.239153</td>
       <td>NaN</td>
-      <td>l1</td>
+      <td>l2</td>
       <td>COMPLETE</td>
     </tr>
   </tbody>
@@ -666,7 +671,10 @@ Test  F1 Score : 0.742857142857143
 <h2>Parallelization<a class="headerlink" href="#parallelization" title="Permalink to this headline">¶</a></h2>
 <p>It is easy to parallelize Optuna. You simply point to the same storage and run the script multiple time. Here is an <a class="reference external" href="https://optuna.readthedocs.io/en/stable/tutorial/10_key_features/004_distributed.html#create-a-study">link</a> to optuna’s documentation on this. The video on this page is a must watch, it’s awesome.</p>
 <p>Each trials is independent of each other, therefore the only requirements for each trials is the set of previous trials and it’s resultant objective value.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <p>You can load the study while you have the optimization script(s) running to see the results in real-time.</p>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">loaded_study</span> <span class="o">=</span> <span class="n">optuna</span><span class="o">.</span><span class="n">load_study</span><span class="p">(</span><span class="n">study_name</span><span class="o">=</span><span class="s2">&quot;my_study&quot;</span><span class="p">,</span> <span class="n">storage</span><span class="o">=</span><span class="s2">&quot;sqlite:///example.db&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -764,7 +772,7 @@ Test  F1 Score : 0.742857142857143
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./guides"
+            path: "./tools"
         },
         predefinedOutput: true
     }
@@ -790,7 +798,7 @@ Test  F1 Score : 0.742857142857143
     <footer class="footer">
   <p>
     
-      By Santa<br/>
+      By Santosh Rajan<br/>
     
         &copy; Copyright 2022.<br/>
   </p>
