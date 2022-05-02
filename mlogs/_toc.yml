@@ -3,7 +3,10 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: tools/conda.ipynb
-- file: tools/optuna.ipynb
-
+parts:
+- caption: Topic Guides
+  chapters:
+  - file: tools/tools
+    sections:
+    - file: tools/conda.ipynb
+    - file: tools/optuna.ipynb
