@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Optuna &#8212; mlogs</title>
+    <title>Optuna</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -54,6 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Metrics" href="../metrics/metrics.html" />
     <link rel="prev" title="Conda" href="conda.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -82,8 +83,6 @@ const thebe_selector_output = ".output, .cell_output"
       
       <img src="../_static/logo.drawio.png" class="logo" alt="logo">
       
-      
-      <h1 class="site-logo" id="site-title">mlogs</h1>
       
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
@@ -122,6 +121,23 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Optuna
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../metrics/metrics.html">
+   Metrics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../metrics/ks.html">
+     KS
     </a>
    </li>
   </ul>
@@ -560,7 +576,7 @@ Test  F1 Score : 0.742857142857143
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>({&#39;C&#39;: 0.12747521518476151, &#39;penalty&#39;: &#39;l1&#39;}, 0.8666666666666666)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>({&#39;C&#39;: 0.10640068907986654, &#39;penalty&#39;: &#39;l1&#39;}, 0.8666666666666666)
 </pre></div>
 </div>
 </div>
@@ -604,37 +620,49 @@ Test  F1 Score : 0.742857142857143
   </thead>
   <tbody>
     <tr>
-      <th>14</th>
-      <td>14</td>
+      <th>1</th>
+      <td>1</td>
       <td>0.866667</td>
-      <td>2022-05-02 04:16:58.812997</td>
-      <td>2022-05-02 04:16:58.824648</td>
-      <td>0 days 00:00:00.011651</td>
-      <td>0.127475</td>
+      <td>2022-05-03 03:53:04.614537</td>
+      <td>2022-05-03 03:53:04.622789</td>
+      <td>0 days 00:00:00.008252</td>
+      <td>0.106401</td>
       <td>NaN</td>
       <td>l1</td>
       <td>COMPLETE</td>
     </tr>
     <tr>
-      <th>13</th>
-      <td>13</td>
-      <td>0.812500</td>
-      <td>2022-05-02 04:16:58.796942</td>
-      <td>2022-05-02 04:16:58.810334</td>
-      <td>0 days 00:00:00.013392</td>
-      <td>0.094113</td>
-      <td>NaN</td>
-      <td>l1</td>
+      <th>2</th>
+      <td>2</td>
+      <td>0.787879</td>
+      <td>2022-05-03 03:53:04.624121</td>
+      <td>2022-05-03 03:53:04.634902</td>
+      <td>0 days 00:00:00.010781</td>
+      <td>0.439276</td>
+      <td>0.796904</td>
+      <td>elasticnet</td>
       <td>COMPLETE</td>
     </tr>
     <tr>
-      <th>7</th>
-      <td>7</td>
-      <td>0.812500</td>
-      <td>2022-05-02 04:16:58.721249</td>
-      <td>2022-05-02 04:16:58.729379</td>
-      <td>0 days 00:00:00.008130</td>
-      <td>0.097637</td>
+      <th>12</th>
+      <td>12</td>
+      <td>0.787879</td>
+      <td>2022-05-03 03:53:04.766192</td>
+      <td>2022-05-03 03:53:04.786954</td>
+      <td>0 days 00:00:00.020762</td>
+      <td>0.174223</td>
+      <td>0.601997</td>
+      <td>elasticnet</td>
+      <td>COMPLETE</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>18</td>
+      <td>0.764706</td>
+      <td>2022-05-03 03:53:04.894279</td>
+      <td>2022-05-03 03:53:04.918423</td>
+      <td>0 days 00:00:00.024144</td>
+      <td>0.974438</td>
       <td>NaN</td>
       <td>l1</td>
       <td>COMPLETE</td>
@@ -642,25 +670,13 @@ Test  F1 Score : 0.742857142857143
     <tr>
       <th>11</th>
       <td>11</td>
-      <td>0.812500</td>
-      <td>2022-05-02 04:16:58.766787</td>
-      <td>2022-05-02 04:16:58.781911</td>
-      <td>0 days 00:00:00.015124</td>
-      <td>0.100856</td>
-      <td>NaN</td>
-      <td>l1</td>
-      <td>COMPLETE</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>1</td>
       <td>0.764706</td>
-      <td>2022-05-02 04:16:58.647219</td>
-      <td>2022-05-02 04:16:58.656339</td>
-      <td>0 days 00:00:00.009120</td>
-      <td>0.524715</td>
-      <td>NaN</td>
-      <td>l1</td>
+      <td>2022-05-03 03:53:04.738464</td>
+      <td>2022-05-03 03:53:04.761539</td>
+      <td>0 days 00:00:00.023075</td>
+      <td>0.466419</td>
+      <td>0.994034</td>
+      <td>elasticnet</td>
       <td>COMPLETE</td>
     </tr>
   </tbody>
@@ -808,14 +824,19 @@ Test  F1 Score : 0.742857142857143
             <p class="prev-next-title">Conda</p>
         </div>
     </a>
+    <a class='right-next' id="next-link" href="../metrics/metrics.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Metrics</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             
         </div>
     </div>
     <footer class="footer">
   <p>
-    
-      By Santosh Rajan<br/>
     
         &copy; Copyright 2022.<br/>
   </p>
