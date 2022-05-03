@@ -5,15 +5,15 @@
 
 #######################################################################################
 # Book settings
-title                       : mlogs  # The title of the book. Will be placed in the left navbar.
-author                      : Santosh Rajan  # The author of the book
+title                       :    # The title of the book. Will be placed in the left navbar.
+author                      :    # The author of the book
 copyright                   : "2022"  # Copyright year to be placed in the footer
 logo                        : logo.drawio.png  # A path to the book logo
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
+  execute_notebooks: auto
 
 # Define the name of the latex output file for PDF builds
 latex:

@@ -5,8 +5,13 @@ format: jb-book
 root: intro
 parts:
 - caption: Topic Guides
+  maxdepth: 1
   chapters:
   - file: tools/tools
     sections:
     - file: tools/conda.ipynb
     - file: tools/optuna.ipynb
+
+  - file: metrics/metrics
+    sections:
+    - file: metrics/ks.ipynb
