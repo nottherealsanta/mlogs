@@ -3,3 +3,6 @@
 - posts/notebook_formatter
 - guides/KS
 - app/metrics - how TP and FP along with Threshold affect metrics 
+- Ideas/Feature_store
+- post/auc_vs_ks
+- tools/local_pypi
