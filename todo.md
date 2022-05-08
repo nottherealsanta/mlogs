@@ -6,3 +6,6 @@
 - Ideas/Feature_store
 - post/auc_vs_ks
 - tools/local_pypi
+- infra/JupyterHub
+- infra/Ray
+- infra/Metabase

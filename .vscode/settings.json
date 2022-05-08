@@ -1,12 +1,12 @@
 {
-    "workbench.colorTheme": "Ayu Mirage",
+    "workbench.colorTheme": "Ayu Light",
     "spellright.language": [],
     "spellright.documentTypes": [
         "latex",
         "plaintext"
     ],
     "python.defaultInterpreterPath": "/home/santoshrajanv/anaconda3/envs/mlogs/bin/python",
-    "workbench.preferredDarkColorTheme": "Ayu Mirage",
+    "workbench.preferredDarkColorTheme": "GitHub Dark Default",
     "workbench.iconTheme": "vscode-icons",
     "window.autoDetectColorScheme": true,
     "workbench.preferredLightColorTheme": "Ayu Light"
