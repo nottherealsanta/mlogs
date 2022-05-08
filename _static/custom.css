@@ -29,8 +29,18 @@ samp {
     font-family: 'Fira Code', monospace;
 }
 
-pre {
+div.cell div.cell_input{
+    border-left-color: #007bff;
+}
+
+.cell_input > pre {
     border: 0px;
     border-radius: 0px;
     background-color: #efefef;
+}
+
+.cell_output > pre {
+    border: 0px;
+    border-radius: 0px;
+    background-color: #f4f4f4;
 }
