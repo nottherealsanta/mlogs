@@ -181,7 +181,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/posts/auc_vs_ks.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/_archive/auc_vs_ks.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -206,7 +206,7 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/nottherealsanta/mlogs/main?urlpath=tree/docs/posts/auc_vs_ks.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nottherealsanta/mlogs/main?urlpath=tree/docs/_archive/auc_vs_ks.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -324,7 +324,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="n">ks_test</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
     <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_classification</span><span class="p">(</span>
-        <span class="n">n_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">class_sep</span><span class="o">=</span><span class="n">i</span><span class="o">*</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span>
+        <span class="n">n_samples</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">class_sep</span><span class="o">=</span><span class="n">i</span><span class="o">*</span><span class="mf">0.02</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span>
     <span class="p">)</span>  <span class="c1"># 1000 samples with 20 features</span>
 
     <span class="c1"># split train-test</span>
@@ -340,8 +340,8 @@ const thebe_selector_output = ".output, .cell_output"
     <span class="n">y_train_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_train</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">]</span>
     <span class="n">y_test_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">]</span>
 
-    <span class="n">auc_train</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_train_pred</span><span class="p">))</span>
-    <span class="n">auc_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred</span><span class="p">))</span>
+    <span class="n">auc_train</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_train_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="kc">None</span><span class="p">))</span>
+    <span class="n">auc_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="kc">None</span><span class="p">))</span>
     <span class="n">ks_train</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ks_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_train_pred</span><span class="p">))</span>
     <span class="n">ks_test</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ks_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred</span><span class="p">))</span>
 </pre></div>
@@ -357,7 +357,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f863a89b820&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fb6afb7e820&gt;
 </pre></div>
 </div>
 <img alt="../_images/auc_vs_ks_2_1.png" src="../_images/auc_vs_ks_2_1.png" />
@@ -366,61 +366,97 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">auc_test</span><span class="p">,</span> <span class="n">ks_test</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="n">y</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5067338828377981 5.34
-0.5108919634972034 5.34
-0.523844568737121 4.859999999999999
-0.5408080659405358 10.93
-0.5595010303208714 12.389999999999999
-0.5778996173093907 17.24
-0.5950471003826906 18.459999999999997
-0.6139240506329113 23.31
-0.6302251987047395 28.17
-0.6481454224315573 29.39
-0.6666544009420077 31.81
-0.682293199882249 31.81
-0.699514277303503 36.67
-0.7157786282013541 40.31
-0.7323373564910214 43.96
-0.7467986458639977 45.17
-0.7606343832793642 48.82
-0.7745069178687077 51.239999999999995
-0.7874227259346483 51.239999999999995
-0.8002281424786577 52.459999999999994
-0.8121504268472183 54.64
-0.8244038857815721 56.10000000000001
-0.834891080365028 58.29
-0.8451942890785987 59.74
-0.8550191345304681 59.74
-0.8629673241095084 61.92999999999999
-0.871136296732411 63.13999999999999
-0.8790108919634971 65.57
-0.8868486900206064 66.79
-0.8952384456873712 69.22
-0.9017883426552841 71.64
-0.9077862820135414 72.86
-0.9142625846335002 75.29
-0.9196717692081249 77.72
-0.924676184869002 78.93
-0.9290550485722695 78.93
-0.9335075066234914 80.14
-0.9368192522814248 80.14
-0.9411981159846924 80.14
-0.9448410362084192 81.36
-0.9476376214306742 81.36
-0.9508389755666765 82.57
-0.9538195466588165 82.57
-0.9566529290550486 82.57
-0.9591551368854871 82.57
-0.9611789814542242 83.78999999999999
-0.9633500147188696 83.78999999999999
-0.9652266705916985 85.0
-0.9672505151604356 86.22
-0.9690167795113336 86.22
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.49 3.34
+0.49 3.21
+0.5 3.15
+0.51 6.81
+0.52 9.9
+0.54 13.33
+0.55 15.94
+0.56 17.89
+0.57 19.83
+0.59 21.37
+0.6 23.01
+0.61 24.77
+0.62 26.74
+0.63 27.83
+0.64 28.9
+0.65 29.79
+0.66 30.57
+0.67 31.6
+0.68 32.57
+0.69 33.65
+0.7 34.96
+0.71 36.29
+0.72 37.43
+0.73 38.38
+0.74 39.79
+0.74 40.93
+0.75 42.04
+0.76 43.39
+0.77 44.45
+0.78 45.45
+0.78 46.8
+0.79 47.89
+0.8 48.94
+0.81 50.11
+0.81 51.23
+0.82 52.36
+0.83 53.53
+0.83 54.35
+0.84 55.3
+0.84 56.09
+0.85 57.15
+0.85 58.2
+0.86 59.21
+0.87 60.2
+0.87 61.26
+0.88 61.95
+0.88 63.14
+0.88 63.68
+0.89 64.44
+0.89 65.27
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">auc_test</span><span class="p">)</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">ks_test</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9984698814975749
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">auc_test</span><span class="p">)</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">ks_test</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9971162872413577
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">auc_test</span><span class="p">)</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">ks_test</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9728101950178002
 </pre></div>
 </div>
 </div>
@@ -439,7 +475,7 @@ const thebe_selector_output = ".output, .cell_output"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./posts"
+            path: "./_archive"
         },
         predefinedOutput: true
     }
