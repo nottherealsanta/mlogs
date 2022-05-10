@@ -238,6 +238,33 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#calculating-ks">
    Calculating KS
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#d-array-with-y-true-and-y-pred">
+     2D array with y_true and y_pred
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sort-the-array-with-y-pred-why-stable">
+     sort the array with y_pred. why stable?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-total-counts-of-positives-and-negatives">
+     get total counts of positives and negatives
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cumilative-rates-cumilative-sum-by-counts">
+     cumilative rates - cumilative sum by counts
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#find-the-maximum-difference-between-the-cumilative-rates">
+     find the maximum difference between the cumilative rates
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#auc-and-ks">
@@ -307,6 +334,33 @@ const thebe_selector_output = ".output, .cell_output"
   <a class="reference internal nav-link" href="#calculating-ks">
    Calculating KS
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#d-array-with-y-true-and-y-pred">
+     2D array with y_true and y_pred
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sort-the-array-with-y-pred-why-stable">
+     sort the array with y_pred. why stable?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-total-counts-of-positives-and-negatives">
+     get total counts of positives and negatives
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cumilative-rates-cumilative-sum-by-counts">
+     cumilative rates - cumilative sum by counts
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#find-the-maximum-difference-between-the-cumilative-rates">
+     find the maximum difference between the cumilative rates
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#auc-and-ks">
@@ -435,9 +489,8 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<ol class="simple">
-<li><p>2D array with y_true and y_pred</p></li>
-</ol>
+<div class="section" id="d-array-with-y-true-and-y-pred">
+<h3>2D array with y_true and y_pred<a class="headerlink" href="#d-array-with-y-true-and-y-pred" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ks_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">((</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_test_pred</span><span class="p">))[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># dstack returns a 3D array with len(z-axis)=1</span>
@@ -456,9 +509,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<ol class="simple">
-<li><p>sort the array with y_pred. <a class="reference external" href="https://stackoverflow.com/questions/1517793/what-is-stability-in-sorting-algorithms-and-why-is-it-important#:~:text=A%20stable%20sorting,key%2Dvalue%20pairs.">why stable?</a></p></li>
-</ol>
+</div>
+<div class="section" id="sort-the-array-with-y-pred-why-stable">
+<h3>sort the array with y_pred. <a class="reference external" href="https://stackoverflow.com/questions/1517793/what-is-stability-in-sorting-algorithms-and-why-is-it-important#:~:text=A%20stable%20sorting,key%2Dvalue%20pairs.">why stable?</a><a class="headerlink" href="#sort-the-array-with-y-pred-why-stable" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ks_arr</span> <span class="o">=</span> <span class="n">ks_arr</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">ks_arr</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;stable&quot;</span><span class="p">)]</span>
@@ -477,9 +530,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<ol class="simple">
-<li><p>get total counts of positives and negatives</p></li>
-</ol>
+</div>
+<div class="section" id="get-total-counts-of-positives-and-negatives">
+<h3>get total counts of positives and negatives<a class="headerlink" href="#get-total-counts-of-positives-and-negatives" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># np.unique(y_test, return_counts=True) -&gt; (array([0, 1]), array([158, 172]))</span>
@@ -498,9 +551,9 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<ol class="simple">
-<li><p>cumilative rates - cumilative sum by counts</p></li>
-</ol>
+</div>
+<div class="section" id="cumilative-rates-cumilative-sum-by-counts">
+<h3>cumilative rates - cumilative sum by counts<a class="headerlink" href="#cumilative-rates-cumilative-sum-by-counts" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cs_N</span> <span class="o">=</span> <span class="p">((</span><span class="mi">1</span> <span class="o">-</span> <span class="n">ks_arr</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span> <span class="c1"># tnr</span>
@@ -531,9 +584,9 @@ const thebe_selector_output = ".output, .cell_output"
 <img alt="../_images/ks_15_0.png" src="../_images/ks_15_0.png" />
 </div>
 </div>
-<ol class="simple">
-<li><p>find the maximum difference between the cumilative rates</p></li>
-</ol>
+</div>
+<div class="section" id="find-the-maximum-difference-between-the-cumilative-rates">
+<h3>find the maximum difference between the cumilative rates<a class="headerlink" href="#find-the-maximum-difference-between-the-cumilative-rates" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cs_diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">cs_N</span> <span class="o">-</span> <span class="n">cs_P</span><span class="p">)</span>
@@ -598,6 +651,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/ks_19_0.png" src="../_images/ks_19_0.png" />
+</div>
 </div>
 </div>
 </div>
