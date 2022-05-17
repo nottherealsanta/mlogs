@@ -1,7 +1,6 @@
 - change dataframe font size in css
 - posts/why scale?
 - posts/notebook_formatter
-- guides/KS
 - app/metrics - how TP and FP along with Threshold affect metrics 
 - Ideas/Feature_store
 - post/auc_vs_ks
@@ -10,3 +9,5 @@
 - infra/Ray
 - infra/Metabase
 - KS/ks_curve
+- algo/ Trees / Decision, Random, Extra, Gradient, XG and Ada
+  - pruning - pre and post

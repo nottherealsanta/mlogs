@@ -1,6 +1,4 @@
-# logs on Machine Learning
-
-start here.
+# Machine Learning logs
 
 [Tools](tools/tools.md)    
 

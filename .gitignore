@@ -1,4 +1,5 @@
 mlogs/_build/
 **/.ipynb_checkpoints/*
 **/mlruns/*
+/mlogs/tools/data/*
 /mlogs/anim/media
