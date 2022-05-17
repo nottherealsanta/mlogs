@@ -18,16 +18,14 @@ X, y = make_classification(
 )  # 1000 samples with 20 features
 
 # split train-test
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.33, random_state=42
-)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 
 # simple Logistic Model
 model = LogisticRegression(random_state=23)
 model.fit(X_train, y_train)
 
 # predictions
-y_train_pred = model.predict_proba(X_train)[:, 1]
+y_train_pred = model.predict_proba(X_train)[:, 1] # probability of class 1
 y_test_pred = model.predict_proba(X_test)[:, 1]
 
 # roc curve
@@ -36,7 +34,6 @@ fnr = 1 - tpr
 tnr = 1 - fpr
 
 col1, col2 = st.columns(2)
-
 
 # plot
 fig1 = go.Figure()
