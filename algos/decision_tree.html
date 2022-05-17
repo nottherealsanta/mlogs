@@ -1,0 +1,519 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decision Trees</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.drawio.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   logs on Machine Learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Topic Guides
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../tools/tools.html">
+   Tools
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tools/conda.html">
+     Conda
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tools/optuna.html">
+     Optuna
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../metrics/metrics.html">
+   Metrics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../metrics/ks.html">
+     KS
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/algos/decision_tree.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/nottherealsanta/mlogs/main?urlpath=tree/docs/algos/decision_tree.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-decision-trees">
+   Why Decision Trees ?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tree">
+   Tree
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inner-workings-of-decision-tree">
+   Inner workings of Decision Tree
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#attribute-selection-measures">
+     Attribute Selection Measures
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#information-gain-entropy">
+       Information Gain &amp; Entropy
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#entropy">
+         Entropy
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#information-gain">
+         Information Gain
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#gini-impurity">
+       Gini Impurity
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Decision Trees</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-decision-trees">
+   Why Decision Trees ?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tree">
+   Tree
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inner-workings-of-decision-tree">
+   Inner workings of Decision Tree
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#attribute-selection-measures">
+     Attribute Selection Measures
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#information-gain-entropy">
+       Information Gain &amp; Entropy
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#entropy">
+         Entropy
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#information-gain">
+         Information Gain
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#gini-impurity">
+       Gini Impurity
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="decision-trees">
+<h1>Decision Trees<a class="headerlink" href="#decision-trees" title="Permalink to this headline">¶</a></h1>
+<p>A non-parametric supervised learning method. Decision tree tries to predict the target variable with tree of simple decision rules. It is used for both Regression and Classification.</p>
+<div class="section" id="why-decision-trees">
+<h2>Why Decision Trees ?<a class="headerlink" href="#why-decision-trees" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Easy to interpret</p></li>
+<li><p>Supports categorical and continuous features</p></li>
+</ul>
+</div>
+<div class="section" id="tree">
+<h2>Tree<a class="headerlink" href="#tree" title="Permalink to this headline">¶</a></h2>
+<p>Tree is an abstract idea to store information i.e an abstact data type. It symbolizes a hierarchial graph that contains parent and child nodes, where a parent node can have multiple child nodes but a child node has only one parent node. The tree starts at a root node which does not have any parent node and end at leaf nodes, which do not have any child nodes.</p>
+<p><img alt="" src="../_images/trees.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Tree can have more than 2 child nodes for a parent node, but for the purposes of computation and understanding the tree in decision tree is limited to 2 child nodes for every parent node (a.k.a Binary Tree)</p>
+</div>
+</div>
+<div class="section" id="inner-workings-of-decision-tree">
+<h2>Inner workings of Decision Tree<a class="headerlink" href="#inner-workings-of-decision-tree" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Every node receives data in the form of {features, target}.</p></li>
+<li><p>We then as a question to a feature, the answer to which - splits this set into two.</p></li>
+<li><p>The question asked is determined by <code class="docutils literal notranslate"><span class="pre">Attribute</span> <span class="pre">Selection</span> <span class="pre">Measure</span></code> - which is heuristic for measuring the understanding of the target given the split.</p></li>
+<li><p>We start the root node with all of the training set.</p></li>
+<li><p>We end when we cannot split (due to all leaf nodes being pure or some condition by hyperparameters like maximum depth ) or have run out of features.</p></li>
+</ul>
+<p>There are varations in types of decision tree algorithms, but generally they follow these steps</p>
+<div class="section" id="attribute-selection-measures">
+<h3>Attribute Selection Measures<a class="headerlink" href="#attribute-selection-measures" title="Permalink to this headline">¶</a></h3>
+<p>These are metrics that measure the quality of a split.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="####Information-gain-&amp;-Entropy">Information Gain &amp; Entropy</a></p></li>
+<li><p><a class="reference external" href="####Gini-Impurity">Gini Impurity </a></p></li>
+</ul>
+<div class="section" id="information-gain-entropy">
+<h4>Information Gain &amp; Entropy<a class="headerlink" href="#information-gain-entropy" title="Permalink to this headline">¶</a></h4>
+<p>Information gain is based on entropy (from <a class="reference external" href="https://en.wikipedia.org/wiki/Information_theory">information theory</a>)</p>
+<div class="section" id="entropy">
+<h5>Entropy<a class="headerlink" href="#entropy" title="Permalink to this headline">¶</a></h5>
+<p>Entropy is defined as</p>
+<div class="math notranslate nohighlight">
+\[E = -\sum_{i=1}^{J} p_i log_2 p_i\]</div>
+<p>where<br />
+\(i\) is each class in a node<br />
+\(J\) is thetotal number of classes<br />
+\(p_i\) is the probablity of class \(i\)
+and Sum of \(p1, p2 … pJ\) equals to 1. Entropy ranges from 0 to 1.</p>
+<p>Consider the following example.</p>
+<a class="bg-primary reference internal image-reference" href="../_images/dt_example_1.png"><img alt="../_images/dt_example_1.png" class="bg-primary align-center" src="../_images/dt_example_1.png" style="width: 300px;" /></a>
+<p>if the split is at \( x  = 2 \),<br />
+then entropy for the left branch <em>i.e</em> \( x &lt; 2 \) is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+ E = - (p_{square} log_2 p_{square} + p_{circle} log_2 p_{circle}) \\
+= -(  \frac{5}{7} log_2 \frac{5}{7} + \frac{2}{7} log_2 \frac{2}{7}  ) \\
+= 0.86
+\end{split}\]</div>
+<p>Entropy for the left branch <em>i.e</em> \( x &gt; 2 \) is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+ E = - p_{circle} log_2 p_{circle} \\
+= - \frac{5}{5} log_2 \frac{5}{5}  \\
+= 0
+\end{split}\]</div>
+</div>
+<div class="section" id="information-gain">
+<h5>Information Gain<a class="headerlink" href="#information-gain" title="Permalink to this headline">¶</a></h5>
+<p>Information Gain is defined as</p>
+<div class="math notranslate nohighlight">
+\[ IG = E(before) - \sum_{i=1}^J E(i, after)  \]</div>
+<p>Split are made to maximize information gain.</p>
+<p>For the example above,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} E(before) = - (p_{square} log_2 p_{square} + p_{circle} log_2 p_{circle}) \\
+= -(  \frac{5}{12} log_2 \frac{5}{12} + \frac{7}{12} log_2 \frac{7}{12}  ) \\ = 0.97 \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split} \sum_{i=1}^J E(i, after)   = 0.86 + 0 \\ = 0.86 \end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[ IG = 0.97 - 0.86 = 0.11 \]</div>
+<p>here is another example :</p>
+<a class="bg-primary reference internal image-reference" href="../_images/dt_example_2.png"><img alt="../_images/dt_example_2.png" class="bg-primary align-center" src="../_images/dt_example_2.png" style="width: 600px;" /></a>
+</div>
+</div>
+<div class="section" id="gini-impurity">
+<h4>Gini Impurity<a class="headerlink" href="#gini-impurity" title="Permalink to this headline">¶</a></h4>
+<p>Chances of being incorrect if randomly assigned a class (accounting class distribution). Gini Impurity is defined as</p>
+<div class="math notranslate nohighlight">
+\[ G = 1 - \sum_{i=1}^J (p_i)^2 \]</div>
+<p>where<br />
+\(i\) is each class in a node<br />
+\(J\) is the total number of classes<br />
+\(p_i\) is the probablity of class \(i\)</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Gini impurity is the preferred because it doesn’t require logarithmic computation which is relatively more expensive. The tree produced by both methods tend to be similar. <a class="reference external" href="https://github.com/rasbt/python-machine-learning-book/blob/master/faq/decision-tree-binary.md">refer here</a></p>
+</div>
+<p>For example,</p>
+<a class="bg-primary reference internal image-reference" href="../_images/dt_example_1.png"><img alt="../_images/dt_example_1.png" class="bg-primary align-center" src="../_images/dt_example_1.png" style="width: 300px;" /></a>
+<p>if the split is at \( x  = 2 \),<br />
+then gini for the left branch <em>i.e</em> \( x &lt; 2 \) is
+$<span class="math notranslate nohighlight">\( 
+G_{left} = 1 - (p_{square}^2 + p_{circle}^2) \\
+= 1 - (  ({\frac{5}{7}})^2 + (\frac{2}{7})^2  ) \\
+= 0.40
+\)</span>$</p>
+<p>then gini for the right branch <em>i.e</em> \( x &gt; 2 \) is
+$<span class="math notranslate nohighlight">\( 
+G_{right} = 1 - ( p_{circle}^2) \\
+= 0
+\)</span>$</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Similar to information gain, the split deciced by the maximum difference in the gini impurity (<em>the amount of impurity removed: before split - after split</em> ). It is also weighted by the number of elements in each splity.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./algos"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+        &copy; Copyright 2022.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
