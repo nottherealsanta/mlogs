@@ -91,7 +91,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   logs on Machine Learning
+   Machine Learning logs
   </a>
  </li>
 </ul>
@@ -119,6 +119,11 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../tools/optuna.html">
      Optuna
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tools/mlflow.html">
+     MLflow
     </a>
    </li>
   </ul>
@@ -300,18 +305,14 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 10&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">ks_2samp</span>
-<span class="ne">---&gt; </span><span class="mi">10</span> <span class="kn">from</span> <span class="nn">ks_metric</span> <span class="kn">import</span> <span class="n">ks_score</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_classification</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="n">n_samples</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">class_sep</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="p">)</span>  <span class="c1"># 1000 samples with 20 features</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="c1"># split train-test</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;ks_metric&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy train: 0.7328358208955223
+Accuracy test: 0.7181818181818181
+F1 train: 0.7089430894308942
+F1 test: 0.7223880597014926
+AUC train: 0.7871932515337423
+AUC test: 0.7467986458639977
+KS train: 0.5134328358208955
+KS test: 0.5212121212121212
 </pre></div>
 </div>
 </div>
