@@ -3,3 +3,4 @@ mlogs/_build/
 **/mlruns/*
 /mlogs/tools/data/*
 /mlogs/anim/media
+*.pyc
