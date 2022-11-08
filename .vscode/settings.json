@@ -5,9 +5,14 @@
         "latex",
         "plaintext"
     ],
-    "python.defaultInterpreterPath": "/home/santoshrajanv/anaconda3/envs/mlogs/bin/python",
     "workbench.preferredDarkColorTheme": "GitHub Dark Default",
     "workbench.iconTheme": "vscode-icons",
     "window.autoDetectColorScheme": true,
-    "workbench.preferredLightColorTheme": "GitHub Light Default"
+    "workbench.preferredLightColorTheme": "GitHub Light Default",
+    "workbench.colorCustomizations": {
+        "titleBar.activeBackground": "#f1fab7",
+        "titleBar.activeForeground": "#000000",
+        "titleBar.inactiveBackground": "#c9cd7e",
+        "titleBar.inactiveForeground": "#000000"
+    },
 }
