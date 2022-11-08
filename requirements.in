@@ -1,5 +1,6 @@
 jupyter-book==0.13.1
-matplotlib==3.6.2
+jupyterlab==3.5.0
+matplotlib==3.6.2   
 ghp-import==2.1.0
 optuna==3.0.3
 pandas==1.5.1
