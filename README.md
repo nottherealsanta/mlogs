@@ -11,10 +11,10 @@ If you'd like to develop and/or build the Logs book, you should:
 1. Clone this repository
 2. Run `pip install -r requirements.txt` (it is recommended you do this within a virtual environment)
 3. (Optional) Edit the books source files located in the `logs/` directory
-4. Run `jupyter-book clean logs/` to remove any existing builds
-5. Run `jupyter-book build logs/`
+4. Run `jupyter-book clean mlogs/` to remove any existing builds
+5. Run `jupyter-book build mlogs/`
 
-A fully-rendered HTML version of the book will be built in `logs/_build/html/`.
+A fully-rendered HTML version of the book will be built in `mlogs/_build/html/`.
 
 ### Hosting the book
 
