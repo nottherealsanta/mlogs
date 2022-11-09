@@ -12,6 +12,7 @@ parts:
     - file: tools/conda.ipynb
     - file: tools/optuna.ipynb
     - file: tools/mlflow.ipynb
+    - file: tools/memory_profiler.ipynb
 
   - file: metrics/metrics
     sections:

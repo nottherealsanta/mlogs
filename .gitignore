@@ -4,3 +4,4 @@ mlogs/_build/
 /mlogs/tools/data/*
 /mlogs/anim/media
 *.pyc
+*.dat
