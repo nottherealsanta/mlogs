@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Decision Trees</title>
+    <title>Memory Profiler</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -51,10 +51,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Metrics" href="../metrics/metrics.html" />
+    <link rel="prev" title="MLflow" href="mlflow.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -117,34 +117,34 @@ const thebe_selector_output = ".output, .cell_output"
   Topic Guides
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../tools/tools.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="tools.html">
    Tools
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../tools/conda.html">
+    <a class="reference internal" href="conda.html">
      Conda
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tools/optuna.html">
+    <a class="reference internal" href="optuna.html">
      Optuna
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../tools/mlflow.html">
+    <a class="reference internal" href="mlflow.html">
      MLflow
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../tools/memory_profiler.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Memory Profiler
     </a>
    </li>
@@ -226,7 +226,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/nottherealsanta/mlogs/main?urlpath=tree/docs/algos/decision_tree.ipynb"
+        <a href="https://mybinder.org/v2/gh/nottherealsanta/mlogs/main?urlpath=tree/docs/tools/memory_profiler.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -269,7 +269,7 @@ title="Fullscreen mode"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/algos/decision_tree.ipynb"
+        <a href="../_sources/tools/memory_profiler.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -329,50 +329,14 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-decision-trees">
-   Why Decision Trees ?
+  <a class="reference internal nav-link" href="#install">
+   Install
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tree">
-   Tree
+  <a class="reference internal nav-link" href="#usage">
+   Usage
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#inner-workings-of-decision-tree">
-   Inner workings of Decision Tree
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#attribute-selection-measures">
-     Attribute Selection Measures
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#information-gain-entropy">
-       Information Gain &amp; Entropy
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#entropy">
-         Entropy
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#information-gain">
-         Information Gain
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#gini-impurity">
-       Gini Impurity
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -383,7 +347,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Decision Trees</h1>
+                <h1>Memory Profiler</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -394,50 +358,14 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-decision-trees">
-   Why Decision Trees ?
+  <a class="reference internal nav-link" href="#install">
+   Install
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tree">
-   Tree
+  <a class="reference internal nav-link" href="#usage">
+   Usage
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#inner-workings-of-decision-tree">
-   Inner workings of Decision Tree
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#attribute-selection-measures">
-     Attribute Selection Measures
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#information-gain-entropy">
-       Information Gain &amp; Entropy
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#entropy">
-         Entropy
-        </a>
-       </li>
-       <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#information-gain">
-         Information Gain
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#gini-impurity">
-       Gini Impurity
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -449,124 +377,78 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="decision-trees">
-<h1>Decision Trees<a class="headerlink" href="#decision-trees" title="Permalink to this headline">#</a></h1>
-<p>A non-parametric supervised learning method. Decision tree tries to predict the target variable with tree of simple decision rules. It is used for both Regression and Classification.</p>
-<section id="why-decision-trees">
-<h2>Why Decision Trees ?<a class="headerlink" href="#why-decision-trees" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Easy to interpret</p></li>
-<li><p>Supports categorical and continuous features</p></li>
-</ul>
-</section>
-<section id="tree">
-<h2>Tree<a class="headerlink" href="#tree" title="Permalink to this headline">#</a></h2>
-<p>Tree is an abstract idea to store information i.e an abstact data type. It symbolizes a hierarchial graph that contains parent and child nodes, where a parent node can have multiple child nodes but a child node has only one parent node. The tree starts at a root node which does not have any parent node and end at leaf nodes, which do not have any child nodes.</p>
-<p><img alt="" src="../_images/trees.png" /></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Tree can have more than 2 child nodes for a parent node, but for the purposes of computation and understanding the tree in decision tree is limited to 2 child nodes for every parent node (a.k.a Binary Tree)</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="memory-profiler">
+<h1>Memory Profiler<a class="headerlink" href="#memory-profiler" title="Permalink to this headline">#</a></h1>
+<section id="install">
+<h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install memory_profiler
+</pre></div>
 </div>
 </section>
-<section id="inner-workings-of-decision-tree">
-<h2>Inner workings of Decision Tree<a class="headerlink" href="#inner-workings-of-decision-tree" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Every node receives data in the form of {features, target}.</p></li>
-<li><p>We then as a question to a feature, the answer to which - splits this set into two.</p></li>
-<li><p>The question asked is determined by <code class="docutils literal notranslate"><span class="pre">Attribute</span> <span class="pre">Selection</span> <span class="pre">Measure</span></code> - which is heuristic for measuring the understanding of the target given the split.</p></li>
-<li><p>We start the root node with all of the training set.</p></li>
-<li><p>We end when we cannot split (due to all leaf nodes being pure or some condition by hyperparameters like maximum depth ) or have run out of features.</p></li>
-</ul>
-<p>There are varations in types of decision tree algorithms, but generally they follow these steps</p>
-<section id="attribute-selection-measures">
-<h3>Attribute Selection Measures<a class="headerlink" href="#attribute-selection-measures" title="Permalink to this headline">#</a></h3>
-<p>These are metrics that measure the quality of a split.</p>
-<ul class="simple">
-<li><p><a class="reference external" href="####Information-gain-&amp;-Entropy">Information Gain &amp; Entropy</a></p></li>
-<li><p><a class="reference external" href="####Gini-Impurity">Gini Impurity </a></p></li>
-</ul>
-<section id="information-gain-entropy">
-<h4>Information Gain &amp; Entropy<a class="headerlink" href="#information-gain-entropy" title="Permalink to this headline">#</a></h4>
-<p>Information gain is based on entropy (from <a class="reference external" href="https://en.wikipedia.org/wiki/Information_theory">information theory</a>)</p>
-<section id="entropy">
-<h5>Entropy<a class="headerlink" href="#entropy" title="Permalink to this headline">#</a></h5>
-<p>Entropy is defined as</p>
-<div class="math notranslate nohighlight">
-\[E = -\sum_{i=1}^{J} p_i log_2 p_i\]</div>
-<p>where<br />
-\(i\) is each class in a node<br />
-\(J\) is thetotal number of classes<br />
-\(p_i\) is the probablity of class \(i\)
-and Sum of \(p1, p2 … pJ\) equals to 1. Entropy ranges from 0 to 1.</p>
-<p>Consider the following example.</p>
-<a class="bg-primary reference internal image-reference" href="../_images/dt_example_1.png"><img alt="../_images/dt_example_1.png" class="bg-primary align-center" src="../_images/dt_example_1.png" style="width: 300px;" /></a>
-<p>if the split is at \( x  = 2 \),<br />
-then entropy for the left branch <em>i.e</em> \( x &lt; 2 \) is</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} 
- E = - (p_{square} log_2 p_{square} + p_{circle} log_2 p_{circle}) \\
-= -(  \frac{5}{7} log_2 \frac{5}{7} + \frac{2}{7} log_2 \frac{2}{7}  ) \\
-= 0.86
-\end{split}\]</div>
-<p>Entropy for the left branch <em>i.e</em> \( x &gt; 2 \) is</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} 
- E = - p_{circle} log_2 p_{circle} \\
-= - \frac{5}{5} log_2 \frac{5}{5}  \\
-= 0
-\end{split}\]</div>
-</section>
-<section id="information-gain">
-<h5>Information Gain<a class="headerlink" href="#information-gain" title="Permalink to this headline">#</a></h5>
-<p>Information Gain is defined as</p>
-<div class="math notranslate nohighlight">
-\[ IG = E(before) - \sum_{i=1}^J E(i, after)  \]</div>
-<p>Split are made to maximize information gain.</p>
-<p>For the example above,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split} E(before) = - (p_{square} log_2 p_{square} + p_{circle} log_2 p_{circle}) \\
-= -(  \frac{5}{12} log_2 \frac{5}{12} + \frac{7}{12} log_2 \frac{7}{12}  ) \\ = 0.97 \end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split} \sum_{i=1}^J E(i, after)   = 0.86 + 0 \\ = 0.86 \end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[ IG = 0.97 - 0.86 = 0.11 \]</div>
-<p>here is another example :</p>
-<a class="bg-primary reference internal image-reference" href="../_images/dt_example_2.png"><img alt="../_images/dt_example_2.png" class="bg-primary align-center" src="../_images/dt_example_2.png" style="width: 600px;" /></a>
-</section>
-</section>
-<section id="gini-impurity">
-<h4>Gini Impurity<a class="headerlink" href="#gini-impurity" title="Permalink to this headline">#</a></h4>
-<p>Chances of being incorrect if randomly assigned a class (accounting class distribution). Gini Impurity is defined as</p>
-<div class="math notranslate nohighlight">
-\[ G = 1 - \sum_{i=1}^J (p_i)^2 \]</div>
-<p>where<br />
-\(i\) is each class in a node<br />
-\(J\) is the total number of classes<br />
-\(p_i\) is the probablity of class \(i\)</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Gini impurity is the preferred because it doesn’t require logarithmic computation which is relatively more expensive. The tree produced by both methods tend to be similar. <a class="reference external" href="https://github.com/rasbt/python-machine-learning-book/blob/master/faq/decision-tree-binary.md">refer here</a></p>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h2>
+<p>__Example Script: __</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">4</span><span class="p">)),</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;ABCD&#39;</span><span class="p">))</span>
+</pre></div>
 </div>
-<p>For example,</p>
-<a class="bg-primary reference internal image-reference" href="../_images/dt_example_1.png"><img alt="../_images/dt_example_1.png" class="bg-primary align-center" src="../_images/dt_example_1.png" style="width: 300px;" /></a>
-<p>if the split is at \( x  = 2 \),<br />
-then gini for the left branch <em>i.e</em> \( x &lt; 2 \) is
-$<span class="math notranslate nohighlight">\( 
-G_{left} = 1 - (p_{square}^2 + p_{circle}^2) \\
-= 1 - (  ({\frac{5}{7}})^2 + (\frac{2}{7})^2  ) \\
-= 0.40
-\)</span>$</p>
-<p>then gini for the right branch <em>i.e</em> \( x &gt; 2 \) is
-$<span class="math notranslate nohighlight">\( 
-G_{right} = 1 - ( p_{circle}^2) \\
-= 0
-\)</span>$</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Similar to information gain, the split deciced by the maximum difference in the gini impurity (<em>the amount of impurity removed: before split - after split</em> ). It is also weighted by the number of elements in each splity.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mprof run memory_profiler_sample.py
+</pre></div>
 </div>
-</section>
-</section>
+<p>Creates a dat file recording memory usage every 0.1 seconds</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>mprof run memory_profiler_sample.py
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mprof: Sampling memory every 0.1s
+running new process
+running as a Python program...
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>mprof plot
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using last profile data.
+Figure(1260x540)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>mprof 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Usage: mprof &lt;command&gt; &lt;options&gt; &lt;arguments&gt;
+
+Available commands:
+
+    run      run a given command or python file
+    attach   alias for &#39;run --attach&#39;: attach to an existing process by pid or name
+    rm       remove a given file generated by mprof
+    clean    clean the current directory from files created by mprof
+    list     display existing profiles, with indices
+    plot     plot memory consumption generated by mprof run
+    peak     print the maximum memory used by an mprof run
+
+Type mprof &lt;command&gt; --help for usage help on a specific command.
+For example, mprof plot --help will list all plotting options.
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -583,7 +465,7 @@ G_{right} = 1 - ( p_{circle}^2) \\
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./algos"
+            path: "./tools"
         },
         predefinedOutput: true
     }
@@ -597,6 +479,20 @@ G_{right} = 1 - ( p_{circle}^2) \\
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="mlflow.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">MLflow</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../metrics/metrics.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Metrics</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
             </footer>
         </div>
