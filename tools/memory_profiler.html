@@ -337,6 +337,23 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#usage">
    Usage
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#profile-py-script">
+     Profile .py script
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-the-latest-result">
+     Plot the latest result
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clean-up">
+     Clean up
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -366,6 +383,23 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#usage">
    Usage
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#profile-py-script">
+     Profile .py script
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-the-latest-result">
+     Plot the latest result
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clean-up">
+     Clean up
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -387,68 +421,57 @@ title="Print to PDF"
 </section>
 <section id="usage">
 <h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">#</a></h2>
-<p>__Example Script: __</p>
+<p><strong>Example Script:</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">4</span><span class="p">)),</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;ABCD&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
+<section id="profile-py-script">
+<h3>Profile .py script<a class="headerlink" href="#profile-py-script" title="Permalink to this headline">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mprof run memory_profiler_sample.py
 </pre></div>
 </div>
-<p>Creates a dat file recording memory usage every 0.1 seconds</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>mprof run memory_profiler_sample.py
+<blockquote>
+<div><p>Creates a dat file recording memory usage every 0.1 seconds</p>
+</div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mprof run --interval <span class="m">1</span> memory_profiler_sample.py
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>mprof: Sampling memory every 0.1s
-running new process
-running as a Python program...
+<blockquote>
+<div><p>Creates a dat file recording memory usage every 1 second</p>
+</div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mprof run -o output.dat memory_profiler_sample.py
 </pre></div>
 </div>
+<blockquote>
+<div><p>Creates a dat file recording memory usage every 0.1 seconds with the name output.dat</p>
+</div></blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">mprof</span> <span class="pre">peak</span> <span class="pre">&lt;executable&gt;</span></code> to find the peak memory usage</p>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>mprof plot
+</section>
+<section id="plot-the-latest-result">
+<h3>Plot the latest result<a class="headerlink" href="#plot-the-latest-result" title="Permalink to this headline">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mprof plot
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using last profile data.
-Figure(1260x540)
+</section>
+<section id="clean-up">
+<h3>Clean up<a class="headerlink" href="#clean-up" title="Permalink to this headline">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mprof clean
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Under the hood, <code class="docutils literal notranslate"><span class="pre">mprof</span></code> uses psutil to get the memory usage of the process. This means that the memory usage reported by <code class="docutils literal notranslate"><span class="pre">mprof</span></code> is the same as the one reported by <code class="docutils literal notranslate"><span class="pre">psutil.Process().memory_info()</span></code>. This is different from the memory usage reported by <code class="docutils literal notranslate"><span class="pre">top</span></code> or <code class="docutils literal notranslate"><span class="pre">htop</span></code> which is the memory usage of the process plus the memory usage of its children. This is why <code class="docutils literal notranslate"><span class="pre">mprof</span></code> reports a lower memory usage than <code class="docutils literal notranslate"><span class="pre">top</span></code> or <code class="docutils literal notranslate"><span class="pre">htop</span></code>.</p>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>mprof can be run separately. Use <code class="docutils literal notranslate"><span class="pre">mprof</span> <span class="pre">attach</span> <span class="pre">&lt;pid&gt;</span></code> to attach to a running process.</p>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>mprof 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Usage: mprof &lt;command&gt; &lt;options&gt; &lt;arguments&gt;
-
-Available commands:
-
-    run      run a given command or python file
-    attach   alias for &#39;run --attach&#39;: attach to an existing process by pid or name
-    rm       remove a given file generated by mprof
-    clean    clean the current directory from files created by mprof
-    list     display existing profiles, with indices
-    plot     plot memory consumption generated by mprof run
-    peak     print the maximum memory used by an mprof run
-
-Type mprof &lt;command&gt; --help for usage help on a specific command.
-For example, mprof plot --help will list all plotting options.
-</pre></div>
-</div>
-</div>
-</div>
+</section>
 </section>
 </section>
 
