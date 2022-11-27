@@ -5,3 +5,4 @@ mlogs/_build/
 /mlogs/anim/media
 *.pyc
 *.dat
+.DS_Store
