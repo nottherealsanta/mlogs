@@ -7,3 +7,4 @@ mlogs/_build/
 *.dat
 .DS_Store
 *bkp
+/.quarto/
