@@ -1,10 +1,9 @@
 project:
   type: website
-  render: 
-      - "!mlogs.bkp/"
+  output-dir: _build
 
 website:
-  title: "mlogs"
+  title: "Mlogs"
   navbar:
     right:
       - about.qmd
