@@ -6,3 +6,4 @@ mlogs/_build/
 *.pyc
 *.dat
 .DS_Store
+*bkp

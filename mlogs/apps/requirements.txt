@@ -1,3 +1,0 @@
-ks_metric==0.2.0
-plotly
-scikit-learn
