@@ -4,7 +4,7 @@ date: "2022-11-28"
 categories: [bigquery, python, data-engineering]
 # jupyter: python3
 execute:
-  cache: true
+    eval: false
 ---
 
 # Bigquery Session
