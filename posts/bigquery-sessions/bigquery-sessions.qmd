@@ -1,0 +1,310 @@
+---
+title: Bigquery Sessions
+date: "2022-11-28"
+categories: [bigquery, python, data-engineering]
+jupyter: python3
+execute:
+  cache: true
+---
+
+# Bigquery Session
+
+Bigquery Session allows you to create variables, temporary table and table across multiple queries. Something like a ipython kernel. Allowing for REPL like experience.
+
+[Sesssion documentation](https://cloud.google.com/bigquery/docs/sessions-intro)
+
+## Create a session
+
+```{python}
+from google.cloud import bigquery
+
+def create_session(client) -> str:
+    return client.query(
+        "SELECT 1;", 
+        job_config=bigquery.QueryJobConfig(create_session=True)
+    ).session_info.session_id
+```
+
+## Query in session
+
+```{python}
+def query_in_session(client, session_id: str, query: str) \
+    -> bigquery.QueryJob:
+    connection_properties = [
+        bigquery.query.ConnectionProperty(
+            key="session_id", value=session_id
+        )
+    ]
+    job_config = bigquery.QueryJobConfig(
+        connection_properties=connection_properties
+    )
+    job = client.query(query, job_config=job_config)
+```
+
+:::{.callout-note}
+Creating a session creates a temporary dataset. You can find the temporary dataset id with the following. I am not sure if this is meant to found and/or if it is stable.
+
+```{python}
+#| code-fold: true
+#| code-summary	: temporary dataset id
+def _get_session_dataset_id() -> str:
+    job = query(
+        """
+        CREATE TEMPORARY TABLE temp_table_fetch_dataset_id 
+        AS (SELECT CURRENT_TIMESTAMP() as time);
+        """
+    )
+    dataset_id = job.destination.dataset_id
+    self.query(f"DROP TABLE temp_table_fetch_dataset_id")
+    return dataset_id
+```
+:::
+
+::: {.callout-note}
+It is also possible to attach a session to a existing [dataset](https://cloud.google.com/bigquery/docs/sessions-write-queries#session_system_variables) to a session. This allows the creation of permanent tables in sessions.
+:::
+
+
+## Bigquery Magic with Sessions
+
+```{python}
+from google.cloud import bigquery
+from google.cloud.bigquery import magics
+
+client = bigquery.Client()
+
+# get session id
+session_id = create_session(client)
+
+# change context's default query job config
+connection_properties = [
+        bigquery.query.ConnectionProperty(
+            key="session_id", value=session_id
+        )
+    ]
+magics.context.default_query_job_config = bigquery.QueryJobConfig(
+    connection_properties=connection_properties
+)
+```
+
+```{python}
+%load_ext google.cloud.bigquery
+```
+
+```{python}
+#|echo: false
+%%bigquery
+SELECT CURRENT_TIMESTAMP();
+```
+
+
+## List all active sessions
+
+```{python}
+def active_sessions(client):
+    """Get the active sessions from client"""
+    project_id = client.project
+    location = client.location
+    query = f"""
+    SELECT
+    *
+    FROM
+        {project_id}.`region-{location.lower()}`.INFORMATION_SCHEMA.SESSIONS_BY_USER
+    WHERE 
+        is_active = True
+    ORDER BY
+    creation_time DESC;
+    """
+    job = client.query(query)
+    return job.to_dataframe()
+```
+
+## Session Python Class
+
+```{python}
+#| code-fold: true
+#| code-summary	: Session class
+import pandas as pd
+class Session:
+    """A BigQuery session connector."""
+
+    def __init__(
+        self,
+        client: bigquery.Client,
+        session_id: str = None,
+        location: str = None,
+        dataset_id: str = None,
+        dataset_project_id: str = None,
+    ) -> None:
+        """Construct instance."""
+
+        # class variables
+        self.bigquery_client = client
+        self.project_id = client.project
+
+        # init location
+        if location is None:
+            self._location = client.location
+        else:
+            self._location = location
+
+        # init session_id
+        def _get_new_session_id() -> str:
+            job = self.bigquery_client.query(
+                "SELECT 1;",
+                job_config=bigquery.QueryJobConfig(create_session=True),
+                location=self._location,
+            )
+            return job.session_info.session_id
+
+        # get session id
+        if session_id is None:
+            self._session_id = _get_new_session_id()
+        else:
+            self._session_id = session_id
+            # check if session exists
+            job = self.query("SELECT 1;")
+            job.result()
+
+        self.dataset_id = dataset_id  # TODO: if session_id already exists, check if dataset_id is the same
+        self.dataset_project_id = dataset_project_id
+
+        # set dataset_project_id
+        if dataset_project_id is not None:
+            self.query(f"""SET @@dataset_project_id = '{dataset_project_id}';""")
+        else:
+            self.query(f"""SET @@dataset_project_id = '{self.project_id}';""")
+
+        # set dataset_id
+        if dataset_id is not None:
+            self.query(f"""SET @@dataset_id = '{dataset_id}';""")
+        else:
+            # init session dataset id
+            def _get_session_dataset_id() -> str:
+                """Get the dataset id of the session"""
+                job = self.query(
+                    """
+                    CREATE TEMPORARY TABLE temp_table_fetch_dataset_id 
+                    AS (SELECT CURRENT_TIMESTAMP() as time);
+                    """
+                )
+                dataset_id = job.destination.dataset_id
+                self.query(f"DROP TABLE temp_table_fetch_dataset_id")
+                return dataset_id
+
+            # get the dataset id
+            self.dataset_id = _get_session_dataset_id()
+
+    def __del__(self) -> None:
+        """Close the session when the instance is destroyed."""
+        logging.debug(f"Closing session {self._session_id}")
+        if self._session_id:
+            job = self.bigquery_client.query(
+                f"CALL BQ.ABORT_SESSION('{self._session_id}')",
+                job_config=bigquery.QueryJobConfig(
+                    create_session=False,
+                    connection_properties=[
+                        bigquery.query.ConnectionProperty(
+                            key="session_id", value=self._session_id
+                        )
+                    ],
+                ),
+                location=self._location,
+            )
+            job.result()
+        logging.debug(f"Session {self._session_id} closed")
+
+    def info(self) -> None:
+        """Get info about the session"""
+        _str = "\n".join(
+            [
+                f"session_id: {self._session_id}",
+                f"project_id: {self.project_id}",
+                f"dataset_id: {self.dataset_id}",
+                f"location: {self._location}",
+                f"# of tables: {len(self.get_tables_meta())}",
+            ]
+        )
+        print(_str)
+
+    def get_tables_meta(self) -> pd.DataFrame:
+        """Get the tables metadata"""
+        query = f"""
+            SELECT 
+                table_id,
+                TIMESTAMP_MILLIS(creation_time) as creation_time,
+                TIMESTAMP_MILLIS(last_modified_time) as last_modified_time,
+                row_count,
+                size_bytes,
+                type
+            FROM {self.dataset_id}.__TABLES__
+        """
+        # TODO find out type : view or table
+        job = self.query(query)
+        return job.to_dataframe()
+
+    def query(self, query: str) -> bigquery.QueryJob:
+        """Run a query in the session."""
+        job = self.bigquery_client.query(
+            query,
+            job_config=bigquery.QueryJobConfig(
+                create_session=False,
+                connection_properties=[
+                    bigquery.query.ConnectionProperty(
+                        key="session_id", value=self._session_id
+                    )
+                ],
+            ),
+            location=self._location,
+        )
+        job.result()  # wait for the job to complete
+        return job
+
+    def run(self, query: str) -> None:
+        """Runs a query in session and returns nothing."""
+        self.query(query)
+
+    def get_dataframe(self, query: str = None, table_name: str = None) -> pd.DataFrame:
+        """Get a dataframe from a query or a table"""
+        if table_name is not None:
+            if query is not None:
+                raise ValueError("Only one of `table_name` or `query` can be specified")
+            query = f"SELECT * FROM {table_name}"
+
+        # TODO: check if table memory  > 75% of local memory
+
+        job = self.query(query)
+        return job.to_dataframe()
+
+    def create_temp_table(
+        self, table_name: str, query: str, overwrite: bool = False
+    ) -> bigquery.TableReference:
+        """Create a temporary table from a query"""
+
+        # TODO : check if table exists
+
+        # create table
+        edited_query = f"""CREATE TEMPORARY TABLE {table_name} AS ({query})"""
+        job = self.query(edited_query)
+
+        return job.destination
+
+    def drop_temp_table(self, table_name: str) -> None:
+        """Destroy a temporary table"""
+        query = f"""DROP TABLE {table_name}"""
+        self.query(query)
+
+    def create_table(self, table_name: str, query: str) -> bigquery.TableReference:
+        """Create a permanent table from a query"""
+        edited_query = f"""CREATE TABLE {table_name} AS ({query})"""
+        job = self.query(edited_query)
+        return job.destination
+
+    def drop_table(self, table_name: str) -> None:
+        """Destroy a permanent table"""
+        query = f"""DROP TABLE {table_name}"""
+        self.query(query)
+
+    # aliases
+    get_df = get_dataframe
+```
