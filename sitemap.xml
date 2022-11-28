@@ -2,34 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://github.com/nottherealsanta/mlogs/todo.html</loc>
-    <lastmod>2022-11-28T06:30:47.279Z</lastmod>
+    <lastmod>2022-11-28T17:59:19.079Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/nottherealsanta/mlogs/posts/memory-profiler/memory_profiler.html</loc>
-    <lastmod>2022-11-28T06:30:49.575Z</lastmod>
+    <lastmod>2022-11-28T17:59:21.179Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/nottherealsanta/mlogs/posts/optuna/optuna.html</loc>
-    <lastmod>2022-11-28T06:30:50.143Z</lastmod>
+    <lastmod>2022-11-28T17:59:21.651Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/nottherealsanta/mlogs/posts/KS/ks.html</loc>
-    <lastmod>2022-11-28T06:30:50.975Z</lastmod>
+    <lastmod>2022-11-28T17:59:22.359Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/nottherealsanta/mlogs/posts/bigquery-sessions/bigquery-sessions.html</loc>
+    <lastmod>2022-11-28T17:59:22.919Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/nottherealsanta/mlogs/posts/mlflow/mlflow.html</loc>
-    <lastmod>2022-11-28T06:30:51.531Z</lastmod>
+    <lastmod>2022-11-28T17:59:23.367Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/nottherealsanta/mlogs/posts/conda/conda.html</loc>
-    <lastmod>2022-11-28T06:30:52.011Z</lastmod>
+    <lastmod>2022-11-28T17:59:23.767Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/nottherealsanta/mlogs/posts/decision-trees/decision_tree.html</loc>
-    <lastmod>2022-11-28T06:30:52.451Z</lastmod>
+    <lastmod>2022-11-28T17:59:24.143Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/nottherealsanta/mlogs/index.html</loc>
-    <lastmod>2022-11-28T06:30:52.915Z</lastmod>
+    <lastmod>2022-11-28T17:59:24.547Z</lastmod>
   </url>
 </urlset>

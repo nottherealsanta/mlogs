@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/bigquery-sessions/bigquery-sessions.html",
       "/posts/memory-profiler/memory_profiler.html",
       "/posts/decision-trees/decision_tree.html",
       "/posts/mlflow/mlflow.html",
