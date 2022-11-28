@@ -1,0 +1,13 @@
+[
+  {
+    "listing": "/index.html",
+    "items": [
+      "/posts/memory-profiler/memory_profiler.html",
+      "/posts/decision-trees/decision_tree.html",
+      "/posts/mlflow/mlflow.html",
+      "/posts/optuna/optuna.html",
+      "/posts/conda/conda.html",
+      "/posts/KS/ks.html"
+    ]
+  }
+]
