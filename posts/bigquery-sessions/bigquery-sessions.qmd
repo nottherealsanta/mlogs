@@ -92,8 +92,7 @@ magics.context.default_query_job_config = bigquery.QueryJobConfig(
 ```
 
 ```{python}
-#|echo: false
-%%bigquery
+Bigq%%bigquery
 SELECT CURRENT_TIMESTAMP();
 ```
 
