@@ -3,7 +3,7 @@ project:
   output-dir: _build
 
 website:
-  title: "Mlogs"
+  title: "mlogs"
   navbar:
     right:
       - about.qmd
