@@ -6,7 +6,8 @@ website:
   title: "mlogs"
   navbar:
     right:
-      - about.qmd
+      - text: "Home"
+        href: http://www.nottherealsanta.com
       - icon: github
         href: https://github.com/
       - icon: twitter
