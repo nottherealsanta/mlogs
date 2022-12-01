@@ -123,7 +123,10 @@ def active_sessions(client):
 ```{python}
 #| code-fold: true
 #| code-summary	: Session class
+
+# this is work in progress :)
 import pandas as pd
+
 class Session:
     """A BigQuery session connector."""
 
