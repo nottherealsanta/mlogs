@@ -9,6 +9,8 @@ from flet import (
 )
 
 def main(page: ft.Page):
+
+    page.scroll = ft.ScrollMode.ALWAYS
     def on_pan_update(e: ft.DragUpdateEvent):
         e.control.top = max(0, e.control.top + e.delta_y)
         e.control.left = max(0, e.control.left + e.delta_x)
