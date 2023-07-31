@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,9 +19,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -48,43 +49,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -123,7 +94,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
@@ -145,30 +117,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <span class="navbar-title">mlogs</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="http://www.nottherealsanta.com">
+    <a class="nav-link" href="http://www.nottherealsanta.com" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/nottherealsanta"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/nottherealsanta" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/nottherealsanta"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://x.com/nottherealsanta" rel="" target=""><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-              </div>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -233,49 +205,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="calculating-ks" class="level2">
 <h2 class="anchored" data-anchor-id="calculating-ks">Calculating KS</h2>
 <pre class="{note}"><code>The following steps can be also done with pandas </code></pre>
-<div class="cell" data-tags="[&quot;hide-cell&quot;]" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sample dataset and sample model</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> make_classification</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LogisticRegression</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># make sample dataset</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>X, y <span class="op">=</span> make_classification(</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    n_samples<span class="op">=</span><span class="dv">1000</span>, class_sep<span class="op">=</span><span class="fl">0.3</span>, random_state<span class="op">=</span><span class="dv">0</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>)  <span class="co"># 1000 samples with 20 features</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># split train-test</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(</span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    X, y, test_size<span class="op">=</span><span class="fl">0.33</span>, random_state<span class="op">=</span><span class="dv">42</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co"># simple Logistic Model</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> LogisticRegression(random_state<span class="op">=</span><span class="dv">23</span>)</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>model.fit(X_train, y_train)</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co"># predictions</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>y_train_pred <span class="op">=</span> model.predict_proba(X_train)[:, <span class="dv">1</span>]</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>y_test_pred <span class="op">=</span> model.predict_proba(X_test)[:, <span class="dv">1</span>]</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(</span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    X_train.shape,</span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>    y_train.shape,</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    y_train_pred.shape,</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    X_test.shape,</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    y_test.shape,</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    y_test_pred.shape,</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>(670, 20) (670,) (670,) (330, 20) (330,) (330,)</code></pre>
-</div>
-</div>
 <p>Consider the following example, <code>y_test</code> represents true target values, here as 1s and 0s. and <code>y_test_pred</code> as prediction probabilities.</p>
 <div class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>y_test[:<span class="dv">5</span>], y_test_pred[:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>y_test[:<span class="dv">5</span>], y_test_pred[:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>(array([0, 0, 1, 0, 1]),
  array([0.3143867 , 0.13123316, 0.15998113, 0.35006658, 0.83034574]))</code></pre>
@@ -284,9 +216,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="d-array-with-y_true-and-y_pred" class="level4">
 <h4 class="anchored" data-anchor-id="d-array-with-y_true-and-y_pred"><strong>1. 2D array with y_true and y_pred</strong></h4>
 <div class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ks_arr <span class="op">=</span> np.dstack((y_test, y_test_pred))[<span class="dv">0</span>]  <span class="co"># dstack returns a 3D array with len(z-axis)=1</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>ks_arr[:<span class="dv">5</span>]  <span class="co"># view array</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ks_arr <span class="op">=</span> np.dstack((y_test, y_test_pred))[<span class="dv">0</span>]  <span class="co"># dstack returns a 3D array with len(z-axis)=1</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>ks_arr[:<span class="dv">5</span>]  <span class="co"># view array</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>array([[0.        , 0.3143867 ],
        [0.        , 0.13123316],
@@ -299,9 +231,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="sort-the-array-with-y_pred.-why-stable" class="level4">
 <h4 class="anchored" data-anchor-id="sort-the-array-with-y_pred.-why-stable"><strong>2. sort the array with y_pred.</strong> <a href="https://stackoverflow.com/questions/1517793/what-is-stability-in-sorting-algorithms-and-why-is-it-important#:~:text=A%20stable%20sorting,key%2Dvalue%20pairs.">why stable?</a></h4>
 <div class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>ks_arr <span class="op">=</span> ks_arr[np.argsort(ks_arr[:, <span class="dv">1</span>], kind<span class="op">=</span><span class="st">"stable"</span>)]</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>ks_arr[:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ks_arr <span class="op">=</span> ks_arr[np.argsort(ks_arr[:, <span class="dv">1</span>], kind<span class="op">=</span><span class="st">"stable"</span>)]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>ks_arr[:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>array([[0.        , 0.0355004 ],
        [0.        , 0.04975776],
@@ -314,13 +246,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="get-total-counts-of-positives-and-negatives" class="level4">
 <h4 class="anchored" data-anchor-id="get-total-counts-of-positives-and-negatives"><strong>3. get total counts of positives and negatives</strong></h4>
 <div class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># np.unique(y_test, return_counts=True) -&gt; (array([0, 1]), array([158, 172]))</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>y_true_counts <span class="op">=</span> np.unique(y_test, return_counts<span class="op">=</span><span class="va">True</span>)[<span class="dv">1</span>]</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> y_true_counts[<span class="dv">0</span>]</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>P <span class="op">=</span> y_true_counts[<span class="dv">1</span>]</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(N, P)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># np.unique(y_test, return_counts=True) -&gt; (array([0, 1]), array([158, 172]))</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>y_true_counts <span class="op">=</span> np.unique(y_test, return_counts<span class="op">=</span><span class="va">True</span>)[<span class="dv">1</span>]</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> y_true_counts[<span class="dv">0</span>]</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>P <span class="op">=</span> y_true_counts[<span class="dv">1</span>]</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(N, P)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>158 172</code></pre>
 </div>
@@ -329,21 +261,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="cumilative-rates---cumilative-sum-by-counts" class="level4">
 <h4 class="anchored" data-anchor-id="cumilative-rates---cumilative-sum-by-counts"><strong>4. cumilative rates - cumilative sum by counts</strong></h4>
 <div class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>cs_N <span class="op">=</span> ((<span class="dv">1</span> <span class="op">-</span> ks_arr[:, <span class="dv">0</span>]).cumsum() <span class="op">/</span> N) <span class="op">*</span> <span class="dv">100</span> <span class="co"># tnr</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>cs_P <span class="op">=</span> ((ks_arr[:, <span class="dv">0</span>]).cumsum() <span class="op">/</span> P) <span class="op">*</span> <span class="dv">100</span> <span class="co"># fnr </span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>cs_N[:<span class="dv">5</span>], cs_P[:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>cs_N <span class="op">=</span> ((<span class="dv">1</span> <span class="op">-</span> ks_arr[:, <span class="dv">0</span>]).cumsum() <span class="op">/</span> N) <span class="op">*</span> <span class="dv">100</span> <span class="co"># tnr</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>cs_P <span class="op">=</span> ((ks_arr[:, <span class="dv">0</span>]).cumsum() <span class="op">/</span> P) <span class="op">*</span> <span class="dv">100</span> <span class="co"># fnr </span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>cs_N[:<span class="dv">5</span>], cs_P[:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>(array([0.63291139, 1.26582278, 1.89873418, 1.89873418, 2.53164557]),
  array([0.        , 0.        , 0.        , 0.58139535, 0.58139535]))</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot cs_N and cs_P</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>)</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>ax.plot(ks_arr[:, <span class="dv">1</span>], cs_N)  <span class="co"># x-axis as y_pred</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>ax.plot(ks_arr[:, <span class="dv">1</span>], cs_P)</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot cs_N and cs_P</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>ax.plot(ks_arr[:, <span class="dv">1</span>], cs_N)  <span class="co"># x-axis as y_pred</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>ax.plot(ks_arr[:, <span class="dv">1</span>], cs_P)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="ks_files/figure-html/cell-8-output-1.png" class="img-fluid"></p>
 </div>
@@ -352,17 +284,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="cumilative-difference" class="level4">
 <h4 class="anchored" data-anchor-id="cumilative-difference"><strong>5. cumilative difference</strong></h4>
 <div class="cell" data-tags="[]" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>cs_diff <span class="op">=</span> np.<span class="bu">abs</span>(cs_N <span class="op">-</span> cs_P)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>cs_diff[:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>cs_diff <span class="op">=</span> np.<span class="bu">abs</span>(cs_N <span class="op">-</span> cs_P)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>cs_diff[:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>array([0.63291139, 1.26582278, 1.89873418, 1.31733883, 1.95025022])</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>ks <span class="op">=</span> cs_diff.<span class="bu">max</span>()</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>ks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>ks <span class="op">=</span> cs_diff.<span class="bu">max</span>()</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>ks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>46.916396820724174</code></pre>
 </div>
@@ -371,33 +303,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="plotting-ks" class="level3">
 <h3 class="anchored" data-anchor-id="plotting-ks">Plotting KS</h3>
 <div class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># plot cumilative percent</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>ax.plot(ks_arr[:, <span class="dv">1</span>], cs_N, label<span class="op">=</span><span class="st">"Class 0"</span>)</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>ax.plot(ks_arr[:, <span class="dv">1</span>], cs_P, label<span class="op">=</span><span class="st">"Class 1"</span>)</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co"># plot max seperation</span></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>ks_threshold <span class="op">=</span> ks_arr[cs_diff.argmax(), <span class="dv">1</span>]</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>ax.axvline(</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>ks_threshold,</span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>    ymin<span class="op">=</span><span class="bu">sorted</span>([cs_P[cs_diff.argmax()] <span class="op">/</span> <span class="dv">100</span>, cs_N[cs_diff.argmax()] <span class="op">/</span> <span class="dv">100</span>])[<span class="dv">0</span>],</span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    ymax<span class="op">=</span><span class="bu">sorted</span>([cs_P[cs_diff.argmax()] <span class="op">/</span> <span class="dv">100</span>, cs_N[cs_diff.argmax()] <span class="op">/</span> <span class="dv">100</span>])[<span class="dv">1</span>],</span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span><span class="st">"black"</span>,</span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>    linewidth<span class="op">=</span><span class="dv">1</span>,</span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>    linestyle<span class="op">=</span><span class="st">"--"</span>,</span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>    label<span class="op">=</span><span class="ss">f"KS: </span><span class="sc">{</span>ks<span class="sc">.</span><span class="bu">round</span>(<span class="dv">2</span>)<span class="sc">}</span><span class="ss"> at </span><span class="sc">{</span>ks_threshold<span class="sc">.</span><span class="bu">round</span>(<span class="dv">3</span>)<span class="sc">}</span><span class="ss">"</span>,</span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="co"># plot settings</span></span>
-<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>ax.set_xlim([<span class="dv">0</span>, <span class="dv">1</span>])</span>
-<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>ax.set_ylim([<span class="dv">0</span>, <span class="dv">100</span>])</span>
-<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Threshold"</span>)</span>
-<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Percentage below threshold"</span>)</span>
-<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">11</span>))</span>
-<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>ax.grid()</span>
-<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
-<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># plot cumilative percent</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>ax.plot(ks_arr[:, <span class="dv">1</span>], cs_N, label<span class="op">=</span><span class="st">"Class 0"</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>ax.plot(ks_arr[:, <span class="dv">1</span>], cs_P, label<span class="op">=</span><span class="st">"Class 1"</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># plot max seperation</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>ks_threshold <span class="op">=</span> ks_arr[cs_diff.argmax(), <span class="dv">1</span>]</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>ax.axvline(</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>ks_threshold,</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    ymin<span class="op">=</span><span class="bu">sorted</span>([cs_P[cs_diff.argmax()] <span class="op">/</span> <span class="dv">100</span>, cs_N[cs_diff.argmax()] <span class="op">/</span> <span class="dv">100</span>])[<span class="dv">0</span>],</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    ymax<span class="op">=</span><span class="bu">sorted</span>([cs_P[cs_diff.argmax()] <span class="op">/</span> <span class="dv">100</span>, cs_N[cs_diff.argmax()] <span class="op">/</span> <span class="dv">100</span>])[<span class="dv">1</span>],</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span><span class="st">"black"</span>,</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>    linewidth<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>    linestyle<span class="op">=</span><span class="st">"--"</span>,</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>    label<span class="op">=</span><span class="ss">f"KS: </span><span class="sc">{</span>ks<span class="sc">.</span><span class="bu">round</span>(<span class="dv">2</span>)<span class="sc">}</span><span class="ss"> at </span><span class="sc">{</span>ks_threshold<span class="sc">.</span><span class="bu">round</span>(<span class="dv">3</span>)<span class="sc">}</span><span class="ss">"</span>,</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a><span class="co"># plot settings</span></span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>ax.set_xlim([<span class="dv">0</span>, <span class="dv">1</span>])</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>ax.set_ylim([<span class="dv">0</span>, <span class="dv">100</span>])</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Threshold"</span>)</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Percentage below threshold"</span>)</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(np.linspace(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">11</span>))</span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>ax.grid()</span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="ks_files/figure-html/cell-11-output-1.png" class="img-fluid"></p>
 </div>
@@ -408,11 +340,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2 class="anchored" data-anchor-id="auc-and-ks">AUC and KS</h2>
 <p>There is a strong relationship between AUC and KS.</p>
 <div class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> roc_curve</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>fpr, tpr, thresholds <span class="op">=</span> roc_curve(y_test, y_test_pred)</span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>(((tpr<span class="op">-</span>fpr).<span class="bu">max</span>())<span class="op">*</span><span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">2</span>), ks.<span class="bu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> roc_curve</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>fpr, tpr, thresholds <span class="op">=</span> roc_curve(y_test, y_test_pred)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>(((tpr<span class="op">-</span>fpr).<span class="bu">max</span>())<span class="op">*</span><span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">2</span>), ks.<span class="bu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>(46.92, 46.92)</code></pre>
 </div>
@@ -424,69 +356,70 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="bin" class="level4">
 <h4 class="anchored" data-anchor-id="bin">1. bin</h4>
 <div class="cell" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dataframe with y_true and y_pred</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame()</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"score"</span>] <span class="op">=</span> y_test_pred</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># one hot encoding the dependent variable</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"class_n"</span>] <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> y_test</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"class_p"</span>] <span class="op">=</span> y_test</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co"># decile bins of prediction scores after ordering them</span></span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"bin"</span>] <span class="op">=</span> pd.qcut(df.score.rank(method<span class="op">=</span><span class="st">"first"</span>), <span class="dv">10</span>, labels<span class="op">=</span><span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">1</span>)))</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dataframe with y_true and y_pred</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame()</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"score"</span>] <span class="op">=</span> y_test_pred</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co"># one hot encoding the dependent variable</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"class_n"</span>] <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> y_test</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"class_p"</span>] <span class="op">=</span> y_test</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="co"># decile bins of prediction scores after ordering them</span></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"bin"</span>] <span class="op">=</span> pd.qcut(df.score.rank(method<span class="op">=</span><span class="st">"first"</span>), <span class="dv">10</span>, labels<span class="op">=</span><span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">1</span>)))</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="14">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>score</th>
-      <th>class_n</th>
-      <th>class_p</th>
-      <th>bin</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0.314387</td>
-      <td>1</td>
-      <td>0</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>0.131233</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0.159981</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0.350067</td>
-      <td>1</td>
-      <td>0</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.830346</td>
-      <td>0</td>
-      <td>1</td>
-      <td>8</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">score</th>
+<th data-quarto-table-cell-role="th">class_n</th>
+<th data-quarto-table-cell-role="th">class_p</th>
+<th data-quarto-table-cell-role="th">bin</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0.314387</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>0.131233</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>0.159981</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>0.350067</td>
+<td>1</td>
+<td>0</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0.830346</td>
+<td>0</td>
+<td>1</td>
+<td>8</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
@@ -494,124 +427,125 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="target-distribution" class="level4">
 <h4 class="anchored" data-anchor-id="target-distribution">2. target distribution</h4>
 <div class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>grouped <span class="op">=</span> df.groupby(<span class="st">"bin"</span>, as_index<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>ks_table <span class="op">=</span> pd.DataFrame()</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>ks_table[<span class="st">"min_score"</span>] <span class="op">=</span> grouped.<span class="bu">min</span>().score</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>ks_table[<span class="st">"max_score"</span>] <span class="op">=</span> grouped.<span class="bu">max</span>().score</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>ks_table[<span class="st">"n_class_n"</span>] <span class="op">=</span> grouped.<span class="bu">sum</span>().class_n</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>ks_table[<span class="st">"n_class_p"</span>] <span class="op">=</span> grouped.<span class="bu">sum</span>().class_p</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>ks_table[<span class="st">"n_total"</span>] <span class="op">=</span> ks_table.n_class_n <span class="op">+</span> ks_table.n_class_p</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>ks_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>grouped <span class="op">=</span> df.groupby(<span class="st">"bin"</span>, as_index<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>ks_table <span class="op">=</span> pd.DataFrame()</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>ks_table[<span class="st">"min_score"</span>] <span class="op">=</span> grouped.<span class="bu">min</span>().score</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>ks_table[<span class="st">"max_score"</span>] <span class="op">=</span> grouped.<span class="bu">max</span>().score</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>ks_table[<span class="st">"n_class_n"</span>] <span class="op">=</span> grouped.<span class="bu">sum</span>().class_n</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>ks_table[<span class="st">"n_class_p"</span>] <span class="op">=</span> grouped.<span class="bu">sum</span>().class_p</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>ks_table[<span class="st">"n_total"</span>] <span class="op">=</span> ks_table.n_class_n <span class="op">+</span> ks_table.n_class_p</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>ks_table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
-
 <div>
 
-<table class="dataframe table table-sm table-striped">
-  <thead>
-    <tr>
-      <th></th>
-      <th>min_score</th>
-      <th>max_score</th>
-      <th>n_class_n</th>
-      <th>n_class_p</th>
-      <th>n_total</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0.035500</td>
-      <td>0.224967</td>
-      <td>21</td>
-      <td>12</td>
-      <td>33</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>0.226262</td>
-      <td>0.327676</td>
-      <td>27</td>
-      <td>6</td>
-      <td>33</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0.328646</td>
-      <td>0.377685</td>
-      <td>19</td>
-      <td>14</td>
-      <td>33</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0.381554</td>
-      <td>0.437930</td>
-      <td>25</td>
-      <td>8</td>
-      <td>33</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.442221</td>
-      <td>0.491976</td>
-      <td>23</td>
-      <td>10</td>
-      <td>33</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>0.495512</td>
-      <td>0.575724</td>
-      <td>17</td>
-      <td>16</td>
-      <td>33</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>0.577944</td>
-      <td>0.671211</td>
-      <td>9</td>
-      <td>24</td>
-      <td>33</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>0.671344</td>
-      <td>0.757899</td>
-      <td>6</td>
-      <td>27</td>
-      <td>33</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>0.765076</td>
-      <td>0.874251</td>
-      <td>4</td>
-      <td>29</td>
-      <td>33</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>0.874542</td>
-      <td>0.988560</td>
-      <td>7</td>
-      <td>26</td>
-      <td>33</td>
-    </tr>
-  </tbody>
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">min_score</th>
+<th data-quarto-table-cell-role="th">max_score</th>
+<th data-quarto-table-cell-role="th">n_class_n</th>
+<th data-quarto-table-cell-role="th">n_class_p</th>
+<th data-quarto-table-cell-role="th">n_total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>0.035500</td>
+<td>0.224967</td>
+<td>21</td>
+<td>12</td>
+<td>33</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>0.226262</td>
+<td>0.327676</td>
+<td>27</td>
+<td>6</td>
+<td>33</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>0.328646</td>
+<td>0.377685</td>
+<td>19</td>
+<td>14</td>
+<td>33</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>0.381554</td>
+<td>0.437930</td>
+<td>25</td>
+<td>8</td>
+<td>33</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>0.442221</td>
+<td>0.491976</td>
+<td>23</td>
+<td>10</td>
+<td>33</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>0.495512</td>
+<td>0.575724</td>
+<td>17</td>
+<td>16</td>
+<td>33</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>0.577944</td>
+<td>0.671211</td>
+<td>9</td>
+<td>24</td>
+<td>33</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>0.671344</td>
+<td>0.757899</td>
+<td>6</td>
+<td>27</td>
+<td>33</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>0.765076</td>
+<td>0.874251</td>
+<td>4</td>
+<td>29</td>
+<td>33</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>0.874542</td>
+<td>0.988560</td>
+<td>7</td>
+<td>26</td>
+<td>33</td>
+</tr>
+</tbody>
 </table>
+
 </div>
 </div>
 </div>
 <div class="cell" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>ks_table[</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    [</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"n_class_n"</span>,</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"n_class_p"</span>,</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    ]</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>].plot.bar(stacked<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>ks_table[</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    [</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"n_class_n"</span>,</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"n_class_p"</span>,</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>].plot.bar(stacked<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
 <pre><code>&lt;AxesSubplot:&gt;</code></pre>
 </div>
@@ -620,12 +554,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <p>The graph above show the difference in classification for each decicles.</p>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Note
 </div>
 </div>
@@ -652,180 +586,180 @@ Note
 <section id="cumulative-difference" class="level4">
 <h4 class="anchored" data-anchor-id="cumulative-difference">3. cumulative difference</h4>
 <div class="cell" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>count_class_n <span class="op">=</span> df.class_n.<span class="bu">sum</span>()</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>count_class_p <span class="op">=</span> df.class_p.<span class="bu">sum</span>()</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>ks_table[<span class="st">"%_class_n"</span>] <span class="op">=</span> (ks_table.n_class_n <span class="op">/</span> count_class_n) <span class="op">*</span> <span class="dv">100</span></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>ks_table[<span class="st">"%_class_p"</span>] <span class="op">=</span> (ks_table.n_class_p <span class="op">/</span> count_class_p) <span class="op">*</span> <span class="dv">100</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>ks_table[<span class="st">"cs_class_n"</span>] <span class="op">=</span> (ks_table.n_class_n <span class="op">/</span> count_class_n).cumsum() <span class="op">*</span> <span class="dv">100</span></span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>ks_table[<span class="st">"cs_class_p"</span>] <span class="op">=</span> (ks_table.n_class_p <span class="op">/</span> count_class_p).cumsum() <span class="op">*</span> <span class="dv">100</span></span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>ks_table[<span class="st">"cs_diff"</span>] <span class="op">=</span> np.<span class="bu">abs</span>(ks_table[<span class="st">"cs_class_n"</span>] <span class="op">-</span> ks_table[<span class="st">"cs_class_p"</span>])</span>
-<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>ks_table.style.<span class="bu">format</span>(</span>
-<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"</span><span class="sc">{:.1f}</span><span class="st">%"</span>, subset<span class="op">=</span>[<span class="st">"%_class_n"</span>, <span class="st">"%_class_p"</span>, <span class="st">"cs_class_n"</span>, <span class="st">"cs_class_p"</span>, <span class="st">"cs_diff"</span>]</span>
-<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>count_class_n <span class="op">=</span> df.class_n.<span class="bu">sum</span>()</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>count_class_p <span class="op">=</span> df.class_p.<span class="bu">sum</span>()</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>ks_table[<span class="st">"%_class_n"</span>] <span class="op">=</span> (ks_table.n_class_n <span class="op">/</span> count_class_n) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>ks_table[<span class="st">"%_class_p"</span>] <span class="op">=</span> (ks_table.n_class_p <span class="op">/</span> count_class_p) <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>ks_table[<span class="st">"cs_class_n"</span>] <span class="op">=</span> (ks_table.n_class_n <span class="op">/</span> count_class_n).cumsum() <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>ks_table[<span class="st">"cs_class_p"</span>] <span class="op">=</span> (ks_table.n_class_p <span class="op">/</span> count_class_p).cumsum() <span class="op">*</span> <span class="dv">100</span></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>ks_table[<span class="st">"cs_diff"</span>] <span class="op">=</span> np.<span class="bu">abs</span>(ks_table[<span class="st">"cs_class_n"</span>] <span class="op">-</span> ks_table[<span class="st">"cs_class_p"</span>])</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>ks_table.style.<span class="bu">format</span>(</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"</span><span class="sc">{:.1f}</span><span class="st">%"</span>, subset<span class="op">=</span>[<span class="st">"%_class_n"</span>, <span class="st">"%_class_p"</span>, <span class="st">"cs_class_n"</span>, <span class="st">"cs_class_p"</span>, <span class="st">"cs_diff"</span>]</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="21">
-
 <style type="text/css">
 </style>
-<table id="T_12afd">
-  <thead>
-    <tr>
-      <th class="blank level0">&nbsp;</th>
-      <th id="T_12afd_level0_col0" class="col_heading level0 col0">min_score</th>
-      <th id="T_12afd_level0_col1" class="col_heading level0 col1">max_score</th>
-      <th id="T_12afd_level0_col2" class="col_heading level0 col2">n_class_n</th>
-      <th id="T_12afd_level0_col3" class="col_heading level0 col3">n_class_p</th>
-      <th id="T_12afd_level0_col4" class="col_heading level0 col4">n_total</th>
-      <th id="T_12afd_level0_col5" class="col_heading level0 col5">%_class_n</th>
-      <th id="T_12afd_level0_col6" class="col_heading level0 col6">%_class_p</th>
-      <th id="T_12afd_level0_col7" class="col_heading level0 col7">cs_class_n</th>
-      <th id="T_12afd_level0_col8" class="col_heading level0 col8">cs_class_p</th>
-      <th id="T_12afd_level0_col9" class="col_heading level0 col9">cs_diff</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th id="T_12afd_level0_row0" class="row_heading level0 row0">0</th>
-      <td id="T_12afd_row0_col0" class="data row0 col0">0.035500</td>
-      <td id="T_12afd_row0_col1" class="data row0 col1">0.224967</td>
-      <td id="T_12afd_row0_col2" class="data row0 col2">21</td>
-      <td id="T_12afd_row0_col3" class="data row0 col3">12</td>
-      <td id="T_12afd_row0_col4" class="data row0 col4">33</td>
-      <td id="T_12afd_row0_col5" class="data row0 col5">13.3%</td>
-      <td id="T_12afd_row0_col6" class="data row0 col6">7.0%</td>
-      <td id="T_12afd_row0_col7" class="data row0 col7">13.3%</td>
-      <td id="T_12afd_row0_col8" class="data row0 col8">7.0%</td>
-      <td id="T_12afd_row0_col9" class="data row0 col9">6.3%</td>
-    </tr>
-    <tr>
-      <th id="T_12afd_level0_row1" class="row_heading level0 row1">1</th>
-      <td id="T_12afd_row1_col0" class="data row1 col0">0.226262</td>
-      <td id="T_12afd_row1_col1" class="data row1 col1">0.327676</td>
-      <td id="T_12afd_row1_col2" class="data row1 col2">27</td>
-      <td id="T_12afd_row1_col3" class="data row1 col3">6</td>
-      <td id="T_12afd_row1_col4" class="data row1 col4">33</td>
-      <td id="T_12afd_row1_col5" class="data row1 col5">17.1%</td>
-      <td id="T_12afd_row1_col6" class="data row1 col6">3.5%</td>
-      <td id="T_12afd_row1_col7" class="data row1 col7">30.4%</td>
-      <td id="T_12afd_row1_col8" class="data row1 col8">10.5%</td>
-      <td id="T_12afd_row1_col9" class="data row1 col9">19.9%</td>
-    </tr>
-    <tr>
-      <th id="T_12afd_level0_row2" class="row_heading level0 row2">2</th>
-      <td id="T_12afd_row2_col0" class="data row2 col0">0.328646</td>
-      <td id="T_12afd_row2_col1" class="data row2 col1">0.377685</td>
-      <td id="T_12afd_row2_col2" class="data row2 col2">19</td>
-      <td id="T_12afd_row2_col3" class="data row2 col3">14</td>
-      <td id="T_12afd_row2_col4" class="data row2 col4">33</td>
-      <td id="T_12afd_row2_col5" class="data row2 col5">12.0%</td>
-      <td id="T_12afd_row2_col6" class="data row2 col6">8.1%</td>
-      <td id="T_12afd_row2_col7" class="data row2 col7">42.4%</td>
-      <td id="T_12afd_row2_col8" class="data row2 col8">18.6%</td>
-      <td id="T_12afd_row2_col9" class="data row2 col9">23.8%</td>
-    </tr>
-    <tr>
-      <th id="T_12afd_level0_row3" class="row_heading level0 row3">3</th>
-      <td id="T_12afd_row3_col0" class="data row3 col0">0.381554</td>
-      <td id="T_12afd_row3_col1" class="data row3 col1">0.437930</td>
-      <td id="T_12afd_row3_col2" class="data row3 col2">25</td>
-      <td id="T_12afd_row3_col3" class="data row3 col3">8</td>
-      <td id="T_12afd_row3_col4" class="data row3 col4">33</td>
-      <td id="T_12afd_row3_col5" class="data row3 col5">15.8%</td>
-      <td id="T_12afd_row3_col6" class="data row3 col6">4.7%</td>
-      <td id="T_12afd_row3_col7" class="data row3 col7">58.2%</td>
-      <td id="T_12afd_row3_col8" class="data row3 col8">23.3%</td>
-      <td id="T_12afd_row3_col9" class="data row3 col9">35.0%</td>
-    </tr>
-    <tr>
-      <th id="T_12afd_level0_row4" class="row_heading level0 row4">4</th>
-      <td id="T_12afd_row4_col0" class="data row4 col0">0.442221</td>
-      <td id="T_12afd_row4_col1" class="data row4 col1">0.491976</td>
-      <td id="T_12afd_row4_col2" class="data row4 col2">23</td>
-      <td id="T_12afd_row4_col3" class="data row4 col3">10</td>
-      <td id="T_12afd_row4_col4" class="data row4 col4">33</td>
-      <td id="T_12afd_row4_col5" class="data row4 col5">14.6%</td>
-      <td id="T_12afd_row4_col6" class="data row4 col6">5.8%</td>
-      <td id="T_12afd_row4_col7" class="data row4 col7">72.8%</td>
-      <td id="T_12afd_row4_col8" class="data row4 col8">29.1%</td>
-      <td id="T_12afd_row4_col9" class="data row4 col9">43.7%</td>
-    </tr>
-    <tr>
-      <th id="T_12afd_level0_row5" class="row_heading level0 row5">5</th>
-      <td id="T_12afd_row5_col0" class="data row5 col0">0.495512</td>
-      <td id="T_12afd_row5_col1" class="data row5 col1">0.575724</td>
-      <td id="T_12afd_row5_col2" class="data row5 col2">17</td>
-      <td id="T_12afd_row5_col3" class="data row5 col3">16</td>
-      <td id="T_12afd_row5_col4" class="data row5 col4">33</td>
-      <td id="T_12afd_row5_col5" class="data row5 col5">10.8%</td>
-      <td id="T_12afd_row5_col6" class="data row5 col6">9.3%</td>
-      <td id="T_12afd_row5_col7" class="data row5 col7">83.5%</td>
-      <td id="T_12afd_row5_col8" class="data row5 col8">38.4%</td>
-      <td id="T_12afd_row5_col9" class="data row5 col9">45.2%</td>
-    </tr>
-    <tr>
-      <th id="T_12afd_level0_row6" class="row_heading level0 row6">6</th>
-      <td id="T_12afd_row6_col0" class="data row6 col0">0.577944</td>
-      <td id="T_12afd_row6_col1" class="data row6 col1">0.671211</td>
-      <td id="T_12afd_row6_col2" class="data row6 col2">9</td>
-      <td id="T_12afd_row6_col3" class="data row6 col3">24</td>
-      <td id="T_12afd_row6_col4" class="data row6 col4">33</td>
-      <td id="T_12afd_row6_col5" class="data row6 col5">5.7%</td>
-      <td id="T_12afd_row6_col6" class="data row6 col6">14.0%</td>
-      <td id="T_12afd_row6_col7" class="data row6 col7">89.2%</td>
-      <td id="T_12afd_row6_col8" class="data row6 col8">52.3%</td>
-      <td id="T_12afd_row6_col9" class="data row6 col9">36.9%</td>
-    </tr>
-    <tr>
-      <th id="T_12afd_level0_row7" class="row_heading level0 row7">7</th>
-      <td id="T_12afd_row7_col0" class="data row7 col0">0.671344</td>
-      <td id="T_12afd_row7_col1" class="data row7 col1">0.757899</td>
-      <td id="T_12afd_row7_col2" class="data row7 col2">6</td>
-      <td id="T_12afd_row7_col3" class="data row7 col3">27</td>
-      <td id="T_12afd_row7_col4" class="data row7 col4">33</td>
-      <td id="T_12afd_row7_col5" class="data row7 col5">3.8%</td>
-      <td id="T_12afd_row7_col6" class="data row7 col6">15.7%</td>
-      <td id="T_12afd_row7_col7" class="data row7 col7">93.0%</td>
-      <td id="T_12afd_row7_col8" class="data row7 col8">68.0%</td>
-      <td id="T_12afd_row7_col9" class="data row7 col9">25.0%</td>
-    </tr>
-    <tr>
-      <th id="T_12afd_level0_row8" class="row_heading level0 row8">8</th>
-      <td id="T_12afd_row8_col0" class="data row8 col0">0.765076</td>
-      <td id="T_12afd_row8_col1" class="data row8 col1">0.874251</td>
-      <td id="T_12afd_row8_col2" class="data row8 col2">4</td>
-      <td id="T_12afd_row8_col3" class="data row8 col3">29</td>
-      <td id="T_12afd_row8_col4" class="data row8 col4">33</td>
-      <td id="T_12afd_row8_col5" class="data row8 col5">2.5%</td>
-      <td id="T_12afd_row8_col6" class="data row8 col6">16.9%</td>
-      <td id="T_12afd_row8_col7" class="data row8 col7">95.6%</td>
-      <td id="T_12afd_row8_col8" class="data row8 col8">84.9%</td>
-      <td id="T_12afd_row8_col9" class="data row8 col9">10.7%</td>
-    </tr>
-    <tr>
-      <th id="T_12afd_level0_row9" class="row_heading level0 row9">9</th>
-      <td id="T_12afd_row9_col0" class="data row9 col0">0.874542</td>
-      <td id="T_12afd_row9_col1" class="data row9 col1">0.988560</td>
-      <td id="T_12afd_row9_col2" class="data row9 col2">7</td>
-      <td id="T_12afd_row9_col3" class="data row9 col3">26</td>
-      <td id="T_12afd_row9_col4" class="data row9 col4">33</td>
-      <td id="T_12afd_row9_col5" class="data row9 col5">4.4%</td>
-      <td id="T_12afd_row9_col6" class="data row9 col6">15.1%</td>
-      <td id="T_12afd_row9_col7" class="data row9 col7">100.0%</td>
-      <td id="T_12afd_row9_col8" class="data row9 col8">100.0%</td>
-      <td id="T_12afd_row9_col9" class="data row9 col9">0.0%</td>
-    </tr>
-  </tbody>
+
+<table id="T_12afd" data-quarto-postprocess="true" class="table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_12afd_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">min_score</th>
+<th id="T_12afd_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">max_score</th>
+<th id="T_12afd_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">n_class_n</th>
+<th id="T_12afd_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">n_class_p</th>
+<th id="T_12afd_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">n_total</th>
+<th id="T_12afd_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">%_class_n</th>
+<th id="T_12afd_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">%_class_p</th>
+<th id="T_12afd_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">cs_class_n</th>
+<th id="T_12afd_level0_col8" class="col_heading level0 col8" data-quarto-table-cell-role="th">cs_class_p</th>
+<th id="T_12afd_level0_col9" class="col_heading level0 col9" data-quarto-table-cell-role="th">cs_diff</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_12afd_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_12afd_row0_col0" class="data row0 col0">0.035500</td>
+<td id="T_12afd_row0_col1" class="data row0 col1">0.224967</td>
+<td id="T_12afd_row0_col2" class="data row0 col2">21</td>
+<td id="T_12afd_row0_col3" class="data row0 col3">12</td>
+<td id="T_12afd_row0_col4" class="data row0 col4">33</td>
+<td id="T_12afd_row0_col5" class="data row0 col5">13.3%</td>
+<td id="T_12afd_row0_col6" class="data row0 col6">7.0%</td>
+<td id="T_12afd_row0_col7" class="data row0 col7">13.3%</td>
+<td id="T_12afd_row0_col8" class="data row0 col8">7.0%</td>
+<td id="T_12afd_row0_col9" class="data row0 col9">6.3%</td>
+</tr>
+<tr class="even">
+<td id="T_12afd_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_12afd_row1_col0" class="data row1 col0">0.226262</td>
+<td id="T_12afd_row1_col1" class="data row1 col1">0.327676</td>
+<td id="T_12afd_row1_col2" class="data row1 col2">27</td>
+<td id="T_12afd_row1_col3" class="data row1 col3">6</td>
+<td id="T_12afd_row1_col4" class="data row1 col4">33</td>
+<td id="T_12afd_row1_col5" class="data row1 col5">17.1%</td>
+<td id="T_12afd_row1_col6" class="data row1 col6">3.5%</td>
+<td id="T_12afd_row1_col7" class="data row1 col7">30.4%</td>
+<td id="T_12afd_row1_col8" class="data row1 col8">10.5%</td>
+<td id="T_12afd_row1_col9" class="data row1 col9">19.9%</td>
+</tr>
+<tr class="odd">
+<td id="T_12afd_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_12afd_row2_col0" class="data row2 col0">0.328646</td>
+<td id="T_12afd_row2_col1" class="data row2 col1">0.377685</td>
+<td id="T_12afd_row2_col2" class="data row2 col2">19</td>
+<td id="T_12afd_row2_col3" class="data row2 col3">14</td>
+<td id="T_12afd_row2_col4" class="data row2 col4">33</td>
+<td id="T_12afd_row2_col5" class="data row2 col5">12.0%</td>
+<td id="T_12afd_row2_col6" class="data row2 col6">8.1%</td>
+<td id="T_12afd_row2_col7" class="data row2 col7">42.4%</td>
+<td id="T_12afd_row2_col8" class="data row2 col8">18.6%</td>
+<td id="T_12afd_row2_col9" class="data row2 col9">23.8%</td>
+</tr>
+<tr class="even">
+<td id="T_12afd_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_12afd_row3_col0" class="data row3 col0">0.381554</td>
+<td id="T_12afd_row3_col1" class="data row3 col1">0.437930</td>
+<td id="T_12afd_row3_col2" class="data row3 col2">25</td>
+<td id="T_12afd_row3_col3" class="data row3 col3">8</td>
+<td id="T_12afd_row3_col4" class="data row3 col4">33</td>
+<td id="T_12afd_row3_col5" class="data row3 col5">15.8%</td>
+<td id="T_12afd_row3_col6" class="data row3 col6">4.7%</td>
+<td id="T_12afd_row3_col7" class="data row3 col7">58.2%</td>
+<td id="T_12afd_row3_col8" class="data row3 col8">23.3%</td>
+<td id="T_12afd_row3_col9" class="data row3 col9">35.0%</td>
+</tr>
+<tr class="odd">
+<td id="T_12afd_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_12afd_row4_col0" class="data row4 col0">0.442221</td>
+<td id="T_12afd_row4_col1" class="data row4 col1">0.491976</td>
+<td id="T_12afd_row4_col2" class="data row4 col2">23</td>
+<td id="T_12afd_row4_col3" class="data row4 col3">10</td>
+<td id="T_12afd_row4_col4" class="data row4 col4">33</td>
+<td id="T_12afd_row4_col5" class="data row4 col5">14.6%</td>
+<td id="T_12afd_row4_col6" class="data row4 col6">5.8%</td>
+<td id="T_12afd_row4_col7" class="data row4 col7">72.8%</td>
+<td id="T_12afd_row4_col8" class="data row4 col8">29.1%</td>
+<td id="T_12afd_row4_col9" class="data row4 col9">43.7%</td>
+</tr>
+<tr class="even">
+<td id="T_12afd_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</td>
+<td id="T_12afd_row5_col0" class="data row5 col0">0.495512</td>
+<td id="T_12afd_row5_col1" class="data row5 col1">0.575724</td>
+<td id="T_12afd_row5_col2" class="data row5 col2">17</td>
+<td id="T_12afd_row5_col3" class="data row5 col3">16</td>
+<td id="T_12afd_row5_col4" class="data row5 col4">33</td>
+<td id="T_12afd_row5_col5" class="data row5 col5">10.8%</td>
+<td id="T_12afd_row5_col6" class="data row5 col6">9.3%</td>
+<td id="T_12afd_row5_col7" class="data row5 col7">83.5%</td>
+<td id="T_12afd_row5_col8" class="data row5 col8">38.4%</td>
+<td id="T_12afd_row5_col9" class="data row5 col9">45.2%</td>
+</tr>
+<tr class="odd">
+<td id="T_12afd_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</td>
+<td id="T_12afd_row6_col0" class="data row6 col0">0.577944</td>
+<td id="T_12afd_row6_col1" class="data row6 col1">0.671211</td>
+<td id="T_12afd_row6_col2" class="data row6 col2">9</td>
+<td id="T_12afd_row6_col3" class="data row6 col3">24</td>
+<td id="T_12afd_row6_col4" class="data row6 col4">33</td>
+<td id="T_12afd_row6_col5" class="data row6 col5">5.7%</td>
+<td id="T_12afd_row6_col6" class="data row6 col6">14.0%</td>
+<td id="T_12afd_row6_col7" class="data row6 col7">89.2%</td>
+<td id="T_12afd_row6_col8" class="data row6 col8">52.3%</td>
+<td id="T_12afd_row6_col9" class="data row6 col9">36.9%</td>
+</tr>
+<tr class="even">
+<td id="T_12afd_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</td>
+<td id="T_12afd_row7_col0" class="data row7 col0">0.671344</td>
+<td id="T_12afd_row7_col1" class="data row7 col1">0.757899</td>
+<td id="T_12afd_row7_col2" class="data row7 col2">6</td>
+<td id="T_12afd_row7_col3" class="data row7 col3">27</td>
+<td id="T_12afd_row7_col4" class="data row7 col4">33</td>
+<td id="T_12afd_row7_col5" class="data row7 col5">3.8%</td>
+<td id="T_12afd_row7_col6" class="data row7 col6">15.7%</td>
+<td id="T_12afd_row7_col7" class="data row7 col7">93.0%</td>
+<td id="T_12afd_row7_col8" class="data row7 col8">68.0%</td>
+<td id="T_12afd_row7_col9" class="data row7 col9">25.0%</td>
+</tr>
+<tr class="odd">
+<td id="T_12afd_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</td>
+<td id="T_12afd_row8_col0" class="data row8 col0">0.765076</td>
+<td id="T_12afd_row8_col1" class="data row8 col1">0.874251</td>
+<td id="T_12afd_row8_col2" class="data row8 col2">4</td>
+<td id="T_12afd_row8_col3" class="data row8 col3">29</td>
+<td id="T_12afd_row8_col4" class="data row8 col4">33</td>
+<td id="T_12afd_row8_col5" class="data row8 col5">2.5%</td>
+<td id="T_12afd_row8_col6" class="data row8 col6">16.9%</td>
+<td id="T_12afd_row8_col7" class="data row8 col7">95.6%</td>
+<td id="T_12afd_row8_col8" class="data row8 col8">84.9%</td>
+<td id="T_12afd_row8_col9" class="data row8 col9">10.7%</td>
+</tr>
+<tr class="even">
+<td id="T_12afd_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</td>
+<td id="T_12afd_row9_col0" class="data row9 col0">0.874542</td>
+<td id="T_12afd_row9_col1" class="data row9 col1">0.988560</td>
+<td id="T_12afd_row9_col2" class="data row9 col2">7</td>
+<td id="T_12afd_row9_col3" class="data row9 col3">26</td>
+<td id="T_12afd_row9_col4" class="data row9 col4">33</td>
+<td id="T_12afd_row9_col5" class="data row9 col5">4.4%</td>
+<td id="T_12afd_row9_col6" class="data row9 col6">15.1%</td>
+<td id="T_12afd_row9_col7" class="data row9 col7">100.0%</td>
+<td id="T_12afd_row9_col8" class="data row9 col8">100.0%</td>
+<td id="T_12afd_row9_col9" class="data row9 col9">0.0%</td>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Note
 </div>
 </div>
@@ -840,9 +774,9 @@ Note
 <h4 class="anchored" data-anchor-id="ks-1">4. KS</h4>
 <p>KS is the max difference between cumulatively summed rate of target and cumulatively summed non-target. i.e.&nbsp;maximum value of <code>cs_diff</code></p>
 <div class="cell" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>ks <span class="op">=</span> ks_table[<span class="st">"cs_diff"</span>].<span class="bu">max</span>()</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"KS = </span><span class="sc">{</span><span class="bu">round</span>(ks,<span class="dv">2</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>ks <span class="op">=</span> ks_table[<span class="st">"cs_diff"</span>].<span class="bu">max</span>()</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"KS = </span><span class="sc">{</span><span class="bu">round</span>(ks,<span class="dv">2</span>)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>KS = 45.17</code></pre>
 </div>
@@ -851,37 +785,37 @@ Note
 <section id="plot-binned-ks" class="level3">
 <h3 class="anchored" data-anchor-id="plot-binned-ks">Plot Binned KS</h3>
 <div class="cell" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>)</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>ax.plot(ks_table[<span class="st">"cs_class_n"</span>], label<span class="op">=</span><span class="st">"Class 0"</span>)</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>ax.plot(ks_table[<span class="st">"cs_class_p"</span>], label<span class="op">=</span><span class="st">"Class 1"</span>)</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>ks_tier <span class="op">=</span> ks_table[<span class="st">"cs_diff"</span>].idxmax()</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>ax.axvline(</span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>ks_tier,</span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    ymin<span class="op">=</span>ks_table.loc[ks_tier, <span class="st">"cs_class_n"</span>] <span class="op">/</span> <span class="dv">100</span>,</span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    ymax<span class="op">=</span>ks_table.loc[ks_tier, <span class="st">"cs_class_p"</span>] <span class="op">/</span> <span class="dv">100</span>,</span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span><span class="st">"black"</span>,</span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>    linewidth<span class="op">=</span><span class="dv">1</span>,</span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>    linestyle<span class="op">=</span><span class="st">"--"</span>,</span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>    label<span class="op">=</span><span class="ss">f"KS: </span><span class="sc">{</span>ks_table[<span class="st">'cs_diff'</span>]<span class="sc">.</span><span class="bu">max</span>()<span class="sc">.</span><span class="bu">round</span>(<span class="dv">2</span>)<span class="sc">}</span><span class="ss"> at tier:</span><span class="sc">{</span>ks_tier<span class="sc">}</span><span class="ss">"</span>,</span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>ax.set_xlim([<span class="dv">0</span>, <span class="dv">9</span>])</span>
-<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>ax.set_ylim([<span class="dv">0</span>, <span class="dv">100</span>])</span>
-<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Tiers"</span>)</span>
-<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Cumilative Percentage"</span>)</span>
-<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(ks_table.index)</span>
-<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>ax.grid()</span>
-<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
-<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>ax.plot(ks_table[<span class="st">"cs_class_n"</span>], label<span class="op">=</span><span class="st">"Class 0"</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>ax.plot(ks_table[<span class="st">"cs_class_p"</span>], label<span class="op">=</span><span class="st">"Class 1"</span>)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>ks_tier <span class="op">=</span> ks_table[<span class="st">"cs_diff"</span>].idxmax()</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>ax.axvline(</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>ks_tier,</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    ymin<span class="op">=</span>ks_table.loc[ks_tier, <span class="st">"cs_class_n"</span>] <span class="op">/</span> <span class="dv">100</span>,</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    ymax<span class="op">=</span>ks_table.loc[ks_tier, <span class="st">"cs_class_p"</span>] <span class="op">/</span> <span class="dv">100</span>,</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    c<span class="op">=</span><span class="st">"black"</span>,</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    linewidth<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    linestyle<span class="op">=</span><span class="st">"--"</span>,</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>    label<span class="op">=</span><span class="ss">f"KS: </span><span class="sc">{</span>ks_table[<span class="st">'cs_diff'</span>]<span class="sc">.</span><span class="bu">max</span>()<span class="sc">.</span><span class="bu">round</span>(<span class="dv">2</span>)<span class="sc">}</span><span class="ss"> at tier:</span><span class="sc">{</span>ks_tier<span class="sc">}</span><span class="ss">"</span>,</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>ax.set_xlim([<span class="dv">0</span>, <span class="dv">9</span>])</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>ax.set_ylim([<span class="dv">0</span>, <span class="dv">100</span>])</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"Tiers"</span>)</span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"Cumilative Percentage"</span>)</span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>ax.set_xticks(ks_table.index)</span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>ax.grid()</span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>ax.legend()</span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="ks_files/figure-html/cell-18-output-1.png" class="img-fluid"></p>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Note
 </div>
 </div>
@@ -1038,9 +972,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1105,6 +1053,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
