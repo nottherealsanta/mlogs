@@ -13,6 +13,6 @@
         "titleBar.inactiveBackground": "#c9cd7e",
         "titleBar.inactiveForeground": "#000000"
     },
-    "workbench.colorTheme": "GitHub Dark",
+    "workbench.colorTheme": "GitHub Light Default",
     "python.formatting.provider": "black",
 }

@@ -1,16 +1,11 @@
 import flet as ft
 from rich import print
-from flet import (
-    colors,
-    Container,
-    GestureDetector,
-    TextField,
-    Stack
-)
+from flet import colors, Container, GestureDetector, TextField, Stack
+
 
 def main(page: ft.Page):
 
-    page.theme_mode = ft.ThemeMode.DARK
+    # page.theme_mode = ft.ThemeMode.DARK
     page.scroll = ft.ScrollMode.ALWAYS
 
     def on_pan_update(e: ft.DragUpdateEvent):
@@ -18,18 +13,18 @@ def main(page: ft.Page):
         e.control.left = max(0, e.control.left + e.delta_x)
         e.control.update()
 
-    def create_gd(left, top, width=1000, height=10000):
-        textfield_a = TextField(
-            label="[1]",
-            value="import pandas as pd",
-            multiline=True,
-            border_color=colors.CYAN,
-        )
+    def create_gd(left, top, width=300, height=100):
+        # textfield_a = TextField(
+        #     label="[1]",
+        #     value="import pandas as pd",
+        #     multiline=True,
+        #     border_color=colors.CYAN,
+        # )
         container_a = Container(
             bgcolor=colors.BLUE,
             border=ft.border.all(1, colors.WHITE70),
             padding=ft.padding.all(10),
-            content=textfield_a,
+            # content=textfield_a,
             border_radius=10,
         )
         stack_a = Stack(
@@ -48,13 +43,14 @@ def main(page: ft.Page):
             content=stack_a,
         )
         return gd
-    
 
     main_stack = []
-    for i in range(2):
-        gd = create_gd(100, 100 * i)
+    from random import randint
+
+    for i in range(500):
+        gd = create_gd(100 * randint(1, 10), 100 * randint(1, 10))
         main_stack.append(gd)
-    
+
     page.add(Stack(main_stack, expand=True))
     # main_container = Container(
     #     content=Stack(main_stack, expand=True),
@@ -62,7 +58,6 @@ def main(page: ft.Page):
     #     height=10000,
     # )
     # page.add(main_container)
-    
 
-ft.app(target=main)
 
+ft.app(target=main, view=ft.WEB_BROWSER)#,  web_renderer="html")
